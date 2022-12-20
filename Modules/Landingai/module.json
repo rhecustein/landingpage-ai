@@ -1,0 +1,13 @@
+{
+    "name": "Landingai",
+    "alias": "landingai",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Landingai\\Providers\\LandingaiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
