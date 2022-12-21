@@ -64,6 +64,8 @@
 											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Efisiensi: Chat AI dapat membantu meningkatkan efisiensi dengan memberikan jawaban cepat dan akurat kepada pertanyaan yang sering diajukan, sehingga Anda tidak perlu menghabiskan waktu untuk menjawab pertanyaan yang sama berulang-ulang.</span></p></li>
                                             <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Keamanan: Chat AI dapat membantu meningkatkan keamanan dengan memberikan informasi yang tepat kepada pengguna yang meminta informasi tertentu.</span></p></li>
                                             <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Produktivitas: Chat AI dapat membantu meningkatkan produktivitas dengan menangani tugas-tugas rutin dan memberikan jawaban cepat kepada pelanggan atau pengguna, sehingga Anda dapat mengalokasikan waktu untuk mengerjakan pekerjaan yang lebih menantang.</span></p></li>
+                                            <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Layanan pelanggan yang lebih baik: Chat AI dapat membantu memberikan layanan pelanggan yang lebih baik dengan memberikan jawaban cepat dan akurat kepada pertanyaan pelanggan, sehingga pelanggan merasa lebih puas dengan layanan yang diterima.</span></p></li>
+                                            <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Analisis sentimen: Chat AI juga dapat membantu menganalisis sentimen pelanggan terhadap suatu produk atau layanan, dengan memindai chat atau pesan yang dikirim oleh pelanggan dan mengidentifikasi tingkat kepuasan atau kekecewaan pelanggan. Hal ini dapat membantu perusahaan mengetahui bagaimana pelanggan menilai produk atau layanan yang ditawarkan, sehingga perusahaan dapat meningkatkan kualitas layanannya.</span></p></li>
                                         </ul>
 									</div>
 								</div>
@@ -80,16 +82,16 @@
 											<div class="title-sm title-wth-divider divider-center my-4"><span>Or</span></div>
 											<div class="row gx-3">
 												<div class="form-group col-lg-6">
-													<label class="form-label">Nama</label>
-													<input class="form-control" placeholder="Silakan Masukan Nama" value="" type="text" name="name" :value="old('name')" required autofocus>
+													<label class="form-label">Name</label>
+													<input class="form-control" placeholder="Enter your name" value="" type="text" name="name" :value="old('name')" required autofocus>
 												</div>
 												<div class="form-group col-lg-6">
 													<label class="form-label">Username</label>
-													<input class="form-control" placeholder="Silakan Masukan Username" value="" type="text" name="username" :value="old('username')" required autofocus >
+													<input class="form-control" placeholder="Enter username" value="" type="text" name="username" :value="old('username')" required autofocus >
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Email</label>
-													<input class="form-control" placeholder="Silakan Masukan Email" value="" type="text" name="email" :value="old('email')" required>
+													<input class="form-control" placeholder="Enter your email id" value="" type="text" name="email" :value="old('email')" required>
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Password</label>
@@ -97,8 +99,8 @@
 														<span class="input-affix-wrapper affix-wth-text">
 															<input class="form-control" placeholder="6+ characters" value="" type="password" name="password" required autocomplete="new-password">
 															<a href="#" class="input-suffix text-primary text-uppercase fs-8 fw-medium">
-																<span>Tampilkan</span>
-																<span class="d-none">Sembuyikan</span>
+																<span>Show</span>
+																<span class="d-none">Hide</span>
 															</a>
 														</span>
 													</div>
@@ -107,7 +109,7 @@
 											
 											<div class="form-check form-check-sm mb-3">
 												<input type="checkbox" class="form-check-input" id="logged_in" checked>
-												<label class="form-check-label text-muted fs-8" for="logged_in">Dengan membuat akun, Anda menyatakan bahwa Anda telah membaca dan setuju dengan <a href="#">Ketentuan penggunaan</a> dan <a href="#">Kebijakan privasi</a>.</label>
+												<label class="form-check-label text-muted fs-8" for="logged_in">By creating an account you specify that you have read and agree with our <a href="#">Tearms of use</a> and <a href="#">Privacy policy</a>. We may keep you inform about latest updates through our default <a href="#">notification settings</a></label>
 											</div>
                                             <x-button class="btn btn-primary btn-rounded btn-uppercase btn-block">
                                                 {{ __('Buat Account') }}
