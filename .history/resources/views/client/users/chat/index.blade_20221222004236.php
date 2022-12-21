@@ -12,7 +12,7 @@
                     <div class="media">
                         <div class="media-head">
                             <div class="avatar avatar-sm avatar-rounded position-relative">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                                 <span
                                     class="badge badge-success badge-indicator badge-indicator-lg position-bottom-end-overflow-1"></span>
                             </div>
@@ -26,28 +26,12 @@
                         </div>
                     </div>
                     <div class="chat-options-wrap">
-                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover hk-navbar-togglable d-none d-xl-block"
-                            href="#" data-bs-toggle="tooltip" data-bs-placement="top" title=""
-                            data-bs-original-title="Collapse">
-                            <span class="icon">
-                                <span class="feather-icon"><i data-feather="chevron-up"></i></span>
-                                <span class="feather-icon d-none"><i data-feather="chevron-down"></i></span>
-                            </span>
-                        </a>
                     </div>
                 </header>
                 <div data-simplebar id="chat_body" class="chat-body">
                     <ul id="dummy_avatar" class="list-unstyled chat-single-list">
-                        <div class="row">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Menu</h5>
-                                <p class="card-text">.aig = [text] AI Generator Image</p>
-                                <p class="card-text">.sticker WhatsApp Sticker = membuat gambar atau video max 10 detik convert jadi stiker Whatsapp.</p>
-                                <p class="card-text">untuk lebih lengkap nya lihat di <a href="">Panduan</a></p>
-                            </div>
-                        </div>
                         <li class="day-sep">
-                            <span>Mulai</span>
+                            <span>Today</span>
                         </li>
                         <li class="media sent">
                             <div class="media-body">
@@ -77,7 +61,7 @@
                         </li>
                         <li class="media received">
                             <div class="avatar avatar-xs avatar-rounded">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                             </div>
                             <div class="media-body">
                                 <div class="msg-box">

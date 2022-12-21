@@ -12,7 +12,7 @@
                     <div class="media">
                         <div class="media-head">
                             <div class="avatar avatar-sm avatar-rounded position-relative">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                                 <span
                                     class="badge badge-success badge-indicator badge-indicator-lg position-bottom-end-overflow-1"></span>
                             </div>
@@ -77,7 +77,7 @@
                         </li>
                         <li class="media received">
                             <div class="avatar avatar-xs avatar-rounded">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                             </div>
                             <div class="media-body">
                                 <div class="msg-box">

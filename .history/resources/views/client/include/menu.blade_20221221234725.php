@@ -249,7 +249,7 @@
             <div class="card-body">
                 <h5 class="h5">Membangun Aplikasi dengan Cepat</h5>
                 <p class="p-sm card-text">Untuk membantu segala kebutuhan anda.</p>
-                <a href="" target="_blank" class="btn btn-primary btn-block">Go
+                <a href="https://nubra-ui.hencework.com/" target="_blank" class="btn btn-primary btn-block">Go
                     Autobot.co.id</a>
             </div>
         </div>

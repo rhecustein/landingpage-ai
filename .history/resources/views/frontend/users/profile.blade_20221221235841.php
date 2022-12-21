@@ -68,19 +68,19 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item border-0"><span><i
                                         class="bi bi-calendar-check-fill text-disabled me-2"></i><span
-                                        class="text-muted">Tanggal Bergabung :</span></span><span class="ms-2">21/12/2022</span>
+                                        class="text-muted">Lokasi</span></span><span class="ms-2">Oh, Canada</span>
                             </li>
                             <li class="list-group-item border-0"><span><i
                                         class="bi bi-briefcase-fill text-disabled me-2"></i><span
-                                        class="text-muted">Status :</span></span><span class="ms-2">Companey</span>
+                                        class="text-muted">Worked at:</span></span><span class="ms-2">Companey</span>
                             </li>
                             <li class="list-group-item border-0"><span><i
                                         class="bi bi-house-door-fill text-disabled me-2"></i><span
-                                        class="text-muted">Kota :</span></span><span class="ms-2">San Francisco,
+                                        class="text-muted">Lives in:</span></span><span class="ms-2">San Francisco,
                                     CA</span></li>
                             <li class="list-group-item border-0"><span><i
                                         class="bi bi-geo-alt-fill text-disabled me-2"></i><span
-                                        class="text-muted">Motto :</span></span><span class="ms-2">Settle, WA</span></li>
+                                        class="text-muted">From:</span></span><span class="ms-2">Settle, WA</span></li>
                         </ul>
                     </div>
                 </div>
@@ -99,29 +99,27 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="card-text mb-5">Ganti kata sandi Anda secara berkala untuk meningkatkan keamanan akun Anda.</p>
+                            <p class="card-text mb-5">There was that time artists at Sequence opted to hand-Sharpie the
+                                lorem ipsum passage on a line of paper bags they designed for Chipotle.</p>
                             <div class="card card-border">
                                 <div class="position-relative">
 
                                 </div>
                                 <div class="card-body">
-                                    <h5>Ubah kata sandi Anda untuk keamanan yang lebih baik.</h5>
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Password Lama</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Password Baru</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Konfirmasi Password</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-                                    </div>
-                                    <button class="btn btn-primary btn-rounded">
-											Save changes
-										</button>
+                                    <h5>Bacon chicken turducken spare ribs.</h5>
+                                    <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
+                                        lorem ipsum knock offs featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum,
+                                        Legal Ipsum.</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="card-footer justify-content-between">
+                            <div>
+                                <a href="#"><i class="bi bi-heart-fill text-primary"></i>30K</a>
+                            </div>
+                            <div>
+                                <a href="#">1K comments</a>
+                                <a href="#">12 shares</a>
                             </div>
                         </div>
                     </div>
