@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Auth Routes
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
@@ -56,6 +56,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 
         //device ai
         Route::get("device", ['as' => "$module_name.device", 'uses' => "$controller_name@device"]);
+        Route::get("device/create", ['as' => "$module_name.device_create", 'uses' => "$controller_name@device_create"]);
+        Route::post("device", ['as' => "$module_name.device_store", 'uses' => "$controller_name@device_store"]);
 
         //tagihan ai
         Route::get("tagihan", ['as' => "$module_name.tagihan", 'uses' => "$controller_name@tagihan"]);

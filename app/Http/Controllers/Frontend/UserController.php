@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Authorizable;
 use App\Events\Frontend\UserProfileUpdated;
 use App\Http\Controllers\Controller;
+use App\Models\Device;
 use App\Models\Permission;
 use App\Models\Role;
 use App\Models\User;
@@ -90,7 +91,8 @@ class UserController extends Controller
         );
     }
 
-    public function chatbot(){
+    public function chatbot()
+    {
         $module_title = $this->module_title;
         $module_name = $this->module_name;
         $module_path = $this->module_path;
@@ -112,7 +114,8 @@ class UserController extends Controller
         );
     }
 
-    public function voice(){
+    public function voice()
+    {
         $module_title = $this->module_title;
         $module_name = $this->module_name;
         $module_path = $this->module_path;
@@ -173,11 +176,49 @@ class UserController extends Controller
         $body_class = 'device-page';
 
         $meta_page_type = 'device';
+        $devices = Device::with('tags')->where('is_deleted', 0)->get();
 
         return view(
             "client.$module_name.device.index",
+            compact('module_title', 'devices', 'module_name', 'module_path', 'module_icon', 'module_action', 'module_name_singular', 'users', 'body_class', 'meta_page_type')
+        );
+    }
+    public function device_create()
+    {
+        $module_title = $this->module_title;
+        $module_name = $this->module_name;
+        $module_path = $this->module_path;
+        $module_icon = $this->module_icon;
+        $module_model = $this->module_model;
+        $module_name_singular = Str::singular($module_name);
+
+        $module_action = 'Device';
+
+        $users = $module_model::all();
+
+        $body_class = 'device-page';
+
+        $meta_page_type = 'device';
+
+        return view(
+            "client.$module_name.device.create",
             compact('module_title', 'module_name', 'module_path', 'module_icon', 'module_action', 'module_name_singular', 'users', 'body_class', 'meta_page_type')
         );
+    }
+    public function device_store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required'],
+            'phone' => ['required'],
+            'tags' => ['required', 'array'],
+        ]);
+
+        $device = Device::create([
+            'name' => $data['name'],
+            'phone' => $data['phone'],
+        ]);
+
+        dd($request->all());
     }
 
     public function tagihan()
@@ -225,7 +266,7 @@ class UserController extends Controller
         if ($$module_name_singular) {
             $userprofile = Userprofile::where('user_id', $id)->first();
         } else {
-            Log::error('UserProfile Exception for Username: '.$username);
+            Log::error('UserProfile Exception for Username: ' . $username);
             abort(404);
         }
 
@@ -256,9 +297,9 @@ class UserController extends Controller
         $module_action = 'Edit Profile';
 
         $page_heading = ucfirst($module_title);
-        $title = $page_heading.' '.ucfirst($module_action);
+        $title = $page_heading . ' ' . ucfirst($module_action);
 
-        if (! auth()->user()->can('edit_users')) {
+        if (!auth()->user()->can('edit_users')) {
             $id = auth()->user()->id;
         }
 
@@ -307,7 +348,7 @@ class UserController extends Controller
         $module_name = $this->module_name;
         $module_name_singular = Str::singular($this->module_name);
 
-        if (! auth()->user()->can('edit_users')) {
+        if (!auth()->user()->can('edit_users')) {
             $id = auth()->user()->id;
             $username = auth()->user()->username;
         }
@@ -329,7 +370,7 @@ class UserController extends Controller
 
         $data_array = $request->except('avatar');
         $data_array['avatar'] = $$module_name_singular->avatar;
-        $data_array['name'] = $request->first_name.' '.$request->last_name;
+        $data_array['name'] = $request->first_name . ' ' . $request->last_name;
 
         $user_profile = Userprofile::where('user_id', '=', $$module_name_singular->id)->first();
         $user_profile->update($data_array);
@@ -492,7 +533,7 @@ class UserController extends Controller
         $user_provider_id = $request->user_provider_id;
         $user_id = $request->user_id;
 
-        if (! $user_provider_id > 0 || ! $user_id > 0) {
+        if (!$user_provider_id > 0 || !$user_id > 0) {
             flash('Invalid Request. Please try again.')->error();
 
             return redirect()->back();
@@ -502,7 +543,7 @@ class UserController extends Controller
             if ($user_id == $user_provider->user->id) {
                 $user_provider->delete();
 
-                flash('<i class="fas fa-exclamation-triangle"></i> Unlinked from User, "'.$user_provider->user->name.'"!')->success();
+                flash('<i class="fas fa-exclamation-triangle"></i> Unlinked from User, "' . $user_provider->user->name . '"!')->success();
 
                 return redirect()->back();
             } else {
@@ -523,9 +564,9 @@ class UserController extends Controller
     {
         if ($id != auth()->user()->id) {
             if (auth()->user()->hasAnyRole(['administrator', 'super admin'])) {
-                Log::info(auth()->user()->name.' ('.auth()->user()->id.') - User Requested for Email Verification.');
+                Log::info(auth()->user()->name . ' (' . auth()->user()->id . ') - User Requested for Email Verification.');
             } else {
-                Log::warning(auth()->user()->name.' ('.auth()->user()->id.') - User trying to confirm another users email.');
+                Log::warning(auth()->user()->name . ' (' . auth()->user()->id . ') - User trying to confirm another users email.');
 
                 abort('404');
             }
@@ -535,7 +576,7 @@ class UserController extends Controller
 
         if ($user) {
             if ($user->email_verified_at == null) {
-                Log::info($user->name.' ('.$user->id.') - User Requested for Email Verification.');
+                Log::info($user->name . ' (' . $user->id . ') - User Requested for Email Verification.');
 
                 // Send Email To Registered User
                 $user->sendEmailVerificationNotification();
@@ -544,9 +585,9 @@ class UserController extends Controller
 
                 return redirect()->back();
             } else {
-                Log::info($user->name.' ('.$user->id.') - User Requested but Email already verified at.'.$user->email_verified_at);
+                Log::info($user->name . ' (' . $user->id . ') - User Requested but Email already verified at.' . $user->email_verified_at);
 
-                flash($user->name.', You already confirmed your email address at '.$user->email_verified_at->isoFormat('LL'))->success()->important();
+                flash($user->name . ', You already confirmed your email address at ' . $user->email_verified_at->isoFormat('LL'))->success()->important();
 
                 return redirect()->back();
             }
