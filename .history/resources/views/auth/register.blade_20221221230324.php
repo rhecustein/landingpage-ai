@@ -56,17 +56,17 @@
 								<div class="row">
 									<div class="col-xxl-9 col-xl-8 col-lg-11 mx-auto">
 										<div class="text-center">
-											<h3 class="mb-2">Nikmati kemudahan mendapatkan informasi yang lebih efisien.</h3>
-											<p>Mulai mencoba<mark> 2 Respon gratis</mark> setiap harinya.</p>
+											<h3 class="mb-2">Nikmati kemudahan mendapatkan informasi yang lebih efisien dengan mendaftar sekarang dan mencoba chat bot dan voice maker kami</h3>
+											<p>Start your <mark>14days free</mark> trial.</p>
 										</div>
 										<ul class="list-icon mt-4">
-											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Server Selalu ON 24 Jam</span></p></li>
-											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Text, Convert Images, & Voice Maker.</span></p></li>
+											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>There are many variations of passages of Lorem Ipsum available, in some form, by injected humour</span></p></li>
+											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>There are many variations of passages of Lorem Ipsum available, in some form, by injected humour</span></p></li>
 										</ul>
 										<div class="row gx-3 mt-7">
 											<div class="col-lg-6">
 												<div class="card card-shadow">
-													<img class="card-img-top" src="{{ asset('html/classic/dist/img/slide3.jpg') }}" alt="Card image cap">
+													<img class="card-img-top" src="dist/img/slide3.jpg" alt="Card image cap">
 													<div class="card-body">
 														<h5 class="card-title text-uppercase">Help Centre</h5>
 														<p class="card-text">This is a wider card with supporting text.</p>
@@ -75,7 +75,7 @@
 											</div>
 											<div class="col-lg-6">
 												<div class="card card-shadow">
-													<img class="card-img-top" src="{{ asset('html/classic/dist/img/slide4.jpg') }}" alt="Card image cap">
+													<img class="card-img-top" src="dist/img/slide4.jpg" alt="Card image cap">
 													<div class="card-body">
 														<h5 class="card-title text-uppercase">Research Centre</h5>
 														<p class="card-text">This is a wider card with supporting text.</p>
@@ -83,37 +83,37 @@
 												</div>
 											</div>
 										</div>
+										<p class="mt-5 p-xs credit-text text-center text-light">All illustration are powered by <a href="https://icons8.com/ouch/" target="_blank" class="text-light"><u>OUCH</u></a></p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-xl-5 col-lg-6 col-md-7 col-sm-10 position-relative mx-auto">
 							<div class="auth-content py-md-0 py-8">
-								<form class="w-100" method="POST" action="{{ route('register') }}">
-                                @csrf
+								<form class="w-100">
 									<div class="row">
 										<div class="col-lg-10 mx-auto">
-											<h4 class="text-center mb-4">Sign Up to AI Autobot</h4>
+											<h4 class="text-center mb-4">Sign Up to Jampack</h4>
 											<button class="btn btn-outline-dark btn-rounded btn-block mb-3"><span><span class="icon"><i class="fab fa-google"></i></span><span>Sign Up with Gmail</span></span></button>
 											<div class="title-sm title-wth-divider divider-center my-4"><span>Or</span></div>
 											<div class="row gx-3">
 												<div class="form-group col-lg-6">
 													<label class="form-label">Name</label>
-													<input class="form-control" placeholder="Enter your name" value="" type="text" name="name" :value="old('name')" required autofocus>
+													<input class="form-control" placeholder="Enter your name" value="" type="text">
 												</div>
 												<div class="form-group col-lg-6">
 													<label class="form-label">Username</label>
-													<input class="form-control" placeholder="Enter username" value="" type="text" name="username" :value="old('username')" required autofocus >
+													<input class="form-control" placeholder="Enter username" value="" type="text">
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Email</label>
-													<input class="form-control" placeholder="Enter your email id" value="" type="text" name="email" :value="old('email')" required>
+													<input class="form-control" placeholder="Enter your email id" value="" type="text">
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Password</label>
 													<div class="input-group password-check">
 														<span class="input-affix-wrapper affix-wth-text">
-															<input class="form-control" placeholder="6+ characters" value="" type="password" name="password" required autocomplete="new-password">
+															<input class="form-control" placeholder="6+ characters" value="" type="password">
 															<a href="#" class="input-suffix text-primary text-uppercase fs-8 fw-medium">
 																<span>Show</span>
 																<span class="d-none">Hide</span>
@@ -127,10 +127,8 @@
 												<input type="checkbox" class="form-check-input" id="logged_in" checked>
 												<label class="form-check-label text-muted fs-8" for="logged_in">By creating an account you specify that you have read and agree with our <a href="#">Tearms of use</a> and <a href="#">Privacy policy</a>. We may keep you inform about latest updates through our default <a href="#">notification settings</a></label>
 											</div>
-                                            <x-button class="btn btn-primary btn-rounded btn-uppercase btn-block">
-                                                {{ __('Buat Account') }}
-                                            </x-button>
-											<p class="p-xs mt-2 text-center">Already a member ? <a href="login"><u>Sign In</u></a></p>
+											<a href="#" class="btn btn-primary btn-rounded btn-uppercase btn-block">Create account</a>
+											<p class="p-xs mt-2 text-center">Already a member ? <a href="#"><u>Sign In</u></a></p>
 										</div>
 									</div>
 								</form>

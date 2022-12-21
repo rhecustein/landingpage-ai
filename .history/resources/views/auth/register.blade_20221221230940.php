@@ -103,17 +103,17 @@
 												</div>
 												<div class="form-group col-lg-6">
 													<label class="form-label">Username</label>
-													<input class="form-control" placeholder="Enter username" value="" type="text" name="username" :value="old('username')" required autofocus >
+													<input class="form-control" placeholder="Enter username" value="" type="text" name="username" :value="old('last_name')" required autofocus >
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Email</label>
-													<input class="form-control" placeholder="Enter your email id" value="" type="text" name="email" :value="old('email')" required>
+													<input class="form-control" placeholder="Enter your email id" value="" type="text">
 												</div>
 												<div class="form-group col-lg-12">
 													<label class="form-label">Password</label>
 													<div class="input-group password-check">
 														<span class="input-affix-wrapper affix-wth-text">
-															<input class="form-control" placeholder="6+ characters" value="" type="password" name="password" required autocomplete="new-password">
+															<input class="form-control" placeholder="6+ characters" value="" type="password">
 															<a href="#" class="input-suffix text-primary text-uppercase fs-8 fw-medium">
 																<span>Show</span>
 																<span class="d-none">Hide</span>
@@ -127,9 +127,7 @@
 												<input type="checkbox" class="form-check-input" id="logged_in" checked>
 												<label class="form-check-label text-muted fs-8" for="logged_in">By creating an account you specify that you have read and agree with our <a href="#">Tearms of use</a> and <a href="#">Privacy policy</a>. We may keep you inform about latest updates through our default <a href="#">notification settings</a></label>
 											</div>
-                                            <x-button class="btn btn-primary btn-rounded btn-uppercase btn-block">
-                                                {{ __('Buat Account') }}
-                                            </x-button>
+											<a href="#" class="btn btn-primary btn-rounded btn-uppercase btn-block">Create account</a>
 											<p class="p-xs mt-2 text-center">Already a member ? <a href="login"><u>Sign In</u></a></p>
 										</div>
 									</div>
