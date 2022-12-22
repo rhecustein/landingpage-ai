@@ -176,7 +176,7 @@
                                                 <label for="date_of_birth" class="form-label">Tanggal Lahir</label>
                                                 <input type="date" class="form-control" id="date_of_birth"
                                                     name="date_of_birth"
-                                                    value="{{ $user->userprofile->date_of_birth->toDateString() }}">
+                                                    value="{{ $user->userprofile->date_of_birth?->toDateString() }}">
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="gender" class="form-label">Jenis Kelamin</label>
