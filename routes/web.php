@@ -8,6 +8,7 @@ use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Frontend\DeviceController;
 use App\Http\Controllers\Frontend\ChatBotController;
 use App\Http\Controllers\Frontend\PackageController;
+use App\Http\Controllers\Frontend\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +50,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::patch('profile/changePassword/{username}', ['as' => "$module_name.changePasswordUpdate", 'uses' => "$controller_name@changePasswordUpdate"]);
     Route::get("$module_name/emailConfirmationResend/{id}", ['as' => "$module_name.emailConfirmationResend", 'uses' => "$controller_name@emailConfirmationResend"]);
     Route::delete("$module_name/userProviderDestroy", ['as' => "$module_name.userProviderDestroy", 'uses' => "$controller_name@userProviderDestroy"]);
-
-
 });
 /*
 *
@@ -81,6 +80,11 @@ Route::name('user.')->middleware(['auth', 'isUser'])->group(function () {
     //package
     Route::get('package', [PackageController::class, 'index'])->name('package');
     Route::get('package/{id}', [PackageController::class, 'packageDetail'])->name('packageDetail');
+
+
+    Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change_password');
 });
 
 

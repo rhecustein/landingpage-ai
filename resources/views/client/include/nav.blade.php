@@ -7,7 +7,7 @@
                     class="icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span></button>
 
             <!-- Search -->
-           
+
             <!-- /Search -->
         </div>
         <!-- /Start Nav -->
@@ -158,7 +158,8 @@
                             data-bs-toggle="dropdown" data-dropdown-animation data-bs-auto-close="outside"
                             aria-expanded="false">
                             <div class="avatar avatar-rounded avatar-xs">
-                                <img src="{{ asset('html/classic/dist/img/avatar2.jpg') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset(Auth::user()->avatar) }}" alt="user"
+                                    class="avatar-img border border-4 border-white">
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -166,16 +167,21 @@
                                 <div class="media">
                                     <div class="media-head me-2">
                                         <div class="avatar avatar-primary avatar-sm avatar-rounded">
-                                            <span class="initial-wrap">Hk</span>
+                                            <img src="{{ asset(Auth::user()->avatar) }}" alt="user"
+                                                class="avatar-img border border-4 border-white">
                                         </div>
                                     </div>
                                     <div class="media-body">
                                         <div class="dropdown">
-                                            <a href="#" class="d-block link-dark fw-medium">{{ Auth::user()->name }}</a>
+                                            <a href="#"
+                                                class="d-block link-dark fw-medium">{{ Auth::user()->name }}</a>
                                         </div>
                                         <div class="fs-7">{{ Auth::user()->email }}</div>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" role="menuitem" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            role="menuitem" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </div>

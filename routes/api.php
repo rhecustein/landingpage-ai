@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/checks', [CheckTrialController::class, 'checks']);
+Route::get('/reset-limit', [CheckTrialController::class, 'reset']);
 Route::get('/credits', [CreditsController::class, 'credits']);

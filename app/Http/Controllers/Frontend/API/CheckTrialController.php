@@ -48,4 +48,28 @@ class CheckTrialController extends Controller
             'limit' => CheckTrial::LIMIT_REQUEST - $checkTrial->attempt
         ]);
     }
+    public function reset(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'no' => 'required|exists:check_trials,no',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 400);
+        }
+
+        $no = $request->no;
+
+        CheckTrial::query()
+            ->where('no', $no)
+            ->first()
+            ->update(['attempt' => 0]);
+
+        return response()->json([
+            'status' => 'Reset OK'
+        ]);
+    }
 }
