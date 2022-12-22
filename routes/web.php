@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Frontend\DeviceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +37,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
+    $module_name = 'users';
+    $controller_name = 'UserController';
+    //profile
+    Route::get('profile/{id}', ['as' => "$module_name.profile", 'uses' => "$controller_name@profile"]);
+    Route::get('profile/{id}/edit', ['as' => "$module_name.profileEdit", 'uses' => "$controller_name@profileEdit"]);
+    Route::patch('profile/{id}/edit', ['as' => "$module_name.profileUpdate", 'uses' => "$controller_name@profileUpdate"]);
+    Route::get('profile/changePassword/{username}', ['as' => "$module_name.changePassword", 'uses' => "$controller_name@changePassword"]);
+    Route::patch('profile/changePassword/{username}', ['as' => "$module_name.changePasswordUpdate", 'uses' => "$controller_name@changePasswordUpdate"]);
+    Route::get("$module_name/emailConfirmationResend/{id}", ['as' => "$module_name.emailConfirmationResend", 'uses' => "$controller_name@emailConfirmationResend"]);
+    Route::delete("$module_name/userProviderDestroy", ['as' => "$module_name.userProviderDestroy", 'uses' => "$controller_name@userProviderDestroy"]);
 });
 /*
 *
@@ -42,17 +54,21 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 * These routes need view-client permission
 * --------------------------------------------------------------------
 */
-Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(function() {
-    Route::prefix('overview')->name('overview.')->group(function() {
-        Route::get('', [UserController::class,'index'])->name('index');
-    });
-    
-    Route::prefix('device')->name('device.')->group(function() {
-        Route::get('', [UserController::class,'device'])->name('index');
+Route::name('user.')->middleware(['auth', 'isUser'])->group(function () {
+    Route::prefix('overview')->name('overview.')->group(function () {
+        Route::get('', [UserController::class, 'index'])->name('index');
     });
 
+    Route::resource('devices', DeviceController::class)->except([
+        'show'
+    ]);
+
+    // Route::prefix('device')->name('device.')->group(function() {
+    //     Route::get('', [UserController::class,'device'])->name('index');
+    // });
+
 });
-        
+
 
 /*
 *

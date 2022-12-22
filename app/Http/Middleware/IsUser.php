@@ -16,9 +16,7 @@ class IsUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role !='user'){
-            return redirect()->back();
-        }
+        abort_if(!auth()->user()->hasRole('user'), 401);
         return $next($request);
     }
 }
