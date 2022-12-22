@@ -6,7 +6,6 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Frontend\DeviceController;
-use App\Http\Controllers\Frontend\ChatBotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,22 +58,17 @@ Route::name('user.')->middleware(['auth', 'isUser'])->group(function () {
     Route::prefix('overview')->name('overview.')->group(function () {
         Route::get('', [UserController::class, 'index'])->name('index');
     });
-    //route devices
+
     Route::resource('devices', DeviceController::class)->except([
         'show'
     ]);
+    //create
     Route::get('devices/create', [DeviceController::class, 'create'])->name('devices.create');
-    Route::post('devices', [DeviceController::class, 'store'])->name('devices.store');
-    Route::get('devices/{device}/edit', [DeviceController::class, 'edit'])->name('devices.edit');
-    Route::patch('devices/{device}', [DeviceController::class, 'update'])->name('devices.update');
-    Route::delete('devices/{device}', [DeviceController::class, 'destroy'])->name('devices.destroy');
 
-    //route Chat Bot
-    Route::resource('chatbot', ChatBotController::class)->except([
-        'show'
-    ]);
-    Route::get('chatbot/create', [ChatBotController::class, 'create'])->name('chatbot.create');
-    Route::post('chatbot', [ChatBotController::class, 'store'])->name('chatbot.store');
+
+    // Route::prefix('device')->name('device.')->group(function() {
+    //     Route::get('', [UserController::class,'device'])->name('index');
+    // });
 
 });
 

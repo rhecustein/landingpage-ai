@@ -6,7 +6,6 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
 use App\Http\Controllers\Client\ClientController;
 use App\Http\Controllers\Frontend\DeviceController;
-use App\Http\Controllers\Frontend\ChatBotController;
 
 /*
 |--------------------------------------------------------------------------

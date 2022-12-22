@@ -58,7 +58,7 @@ class DeviceController extends Controller
         ]);
         $device = Device::create($data + ['user_id' => auth()->user()->id]);
         $device->tags()->createMany($data['tags']);
-        return redirect()->route('user.devices.index');
+        return redirect()->route('devices');
     }
 
 
@@ -97,7 +97,7 @@ class DeviceController extends Controller
         $device->update($data);
         $device->tags()->delete();
         $device->tags()->createMany($data['tags']);
-        return redirect()->route('user.devices.index');
+        return redirect()->route('devices');
     }
 
     /**
@@ -111,6 +111,6 @@ class DeviceController extends Controller
         abort_if(!$device->user()->is(auth()->user()), 401);
         $device->update(['is_deleted' => true]);
 
-        return redirect()->route('user.devices.index');
+        return redirect()->route('devices');
     }
 }
