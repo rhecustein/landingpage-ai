@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class CheckTrial extends Model
 {
     use HasFactory;
-    protected $fillable = ['no'];
+    protected $fillable = ['no', 'attempt'];
     public const LIMIT_REQUEST = 5;
 }
