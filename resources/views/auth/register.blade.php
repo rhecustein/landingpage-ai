@@ -1,166 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Autobot WS - chatBot, Voicemaker dan AI Solution</title>
-    <meta name="description" content=""/>
-    
-	<!-- Favicon -->
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
     <link rel="icon" type="image/ico" href="{{ asset('img/favicon.png') }}" />
-	
-	<!-- CSS -->
+
+    <!-- CSS -->
     <link href="{{ asset('html/classic/dist/css/style.css') }}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-   	<!-- Wrapper -->
-	<div class="hk-wrapper hk-pg-auth" data-footer="simple">
-		<!-- Top Navbar -->
-		<nav class="hk-navbar navbar navbar-expand-xl navbar-light fixed-top">
-			<div class="container-xxl">
-				<!-- Start Nav -->
-				<div class="nav-start-wrap">
-					<a class="navbar-brand" href="index.html">
-						<img class="brand-img d-inline-block" src="{{ asset ('img/logo-light-autobot.png') }}" alt="brand" height="50px"/>
-					</a>
-				</div>
-				<!-- /Start Nav -->
+    <!-- Wrapper -->
+    <div class="hk-wrapper hk-pg-auth" data-footer="simple">
+        <!-- Top Navbar -->
+        <nav class="hk-navbar navbar navbar-expand-xl navbar-light fixed-top">
+            <div class="container-xxl">
+                <!-- Start Nav -->
+                <div class="nav-start-wrap">
+                    <a class="navbar-brand" href="index.html">
+                        <img class="brand-img d-inline-block" src="{{ asset('img/logo-light-autobot.png') }}"
+                            alt="brand" height="50px" />
+                    </a>
+                </div>
+                <!-- /Start Nav -->
 
-				<!-- End Nav -->
-				<div class="nav-end-wrap">
-					<ul class="navbar-nav flex-row">
-						<li class="nav-item nav-link py-0">
-							<a href="#" class="btn btn-outline-light">Login</a>
-						</li>
-					</ul>	
-				</div>
-				<!-- /End Nav -->
-			</div>
+                <!-- End Nav -->
+                <div class="nav-end-wrap">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item nav-link py-0">
+                            <a href="#" class="btn btn-outline-light">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /End Nav -->
+            </div>
 
-		</nav>
-		<!-- /Top Navbar -->
+        </nav>
+        <!-- /Top Navbar -->
 
-		<!-- Main Content -->
-		<div class="hk-pg-wrapper">
-			<!-- Page Body -->
-			<div class="hk-pg-body">
-				<!-- Container -->
-				<div class="container-xxl">
-					<!-- Row -->
-					<div class="row">
-						<div class="col-xl-7 col-lg-6 d-lg-block d-none v-separator">
-							<div class="auth-content py-md-0  py-8">
-								<div class="row">
-									<div class="col-xxl-9 col-xl-8 col-lg-11 mx-auto">
-										<div class="text-center">
-											<h3 class="mb-2">Nikmati kemudahan mendapatkan informasi yang lebih efisien.</h3>
-											<p>Mulai mencoba<mark> 2 Respon gratis</mark> setiap harinya.</p>
-										</div>
-										<ul class="list-icon mt-4">
-											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Server Selalu ON 24 Jam</span></p></li>
-											<li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Efisiensi: Chat AI dapat membantu meningkatkan efisiensi dengan memberikan jawaban cepat dan akurat kepada pertanyaan yang sering diajukan, sehingga Anda tidak perlu menghabiskan waktu untuk menjawab pertanyaan yang sama berulang-ulang.</span></p></li>
-                                            <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Keamanan: Chat AI dapat membantu meningkatkan keamanan dengan memberikan informasi yang tepat kepada pengguna yang meminta informasi tertentu.</span></p></li>
-                                            <li class="mb-1"><p><i class="ri-check-fill text-success"></i><span>Produktivitas: Chat AI dapat membantu meningkatkan produktivitas dengan menangani tugas-tugas rutin dan memberikan jawaban cepat kepada pelanggan atau pengguna, sehingga Anda dapat mengalokasikan waktu untuk mengerjakan pekerjaan yang lebih menantang.</span></p></li>
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper">
+            <!-- Page Body -->
+            <div class="hk-pg-body">
+                <!-- Container -->
+                <div class="container-xxl">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6 d-lg-block d-none v-separator">
+                            <div class="auth-content py-md-0  py-8">
+                                <div class="row">
+                                    <div class="col-xxl-9 col-xl-8 col-lg-11 mx-auto">
+                                        <div class="text-center">
+                                            <h3 class="mb-2">Nikmati kemudahan mendapatkan informasi yang lebih
+                                                efisien.</h3>
+                                            <p>Mulai mencoba<mark> 2 Respon gratis</mark> setiap harinya.</p>
+                                        </div>
+                                        <ul class="list-icon mt-4">
+                                            <li class="mb-1">
+                                                <p><i class="ri-check-fill text-success"></i><span>Server Selalu ON 24
+                                                        Jam</span></p>
+                                            </li>
+                                            <li class="mb-1">
+                                                <p><i class="ri-check-fill text-success"></i><span>Efisiensi: Chat AI
+                                                        dapat membantu meningkatkan efisiensi dengan memberikan jawaban
+                                                        cepat dan akurat kepada pertanyaan yang sering diajukan,
+                                                        sehingga Anda tidak perlu menghabiskan waktu untuk menjawab
+                                                        pertanyaan yang sama berulang-ulang.</span></p>
+                                            </li>
+                                            <li class="mb-1">
+                                                <p><i class="ri-check-fill text-success"></i><span>Keamanan: Chat AI
+                                                        dapat membantu meningkatkan keamanan dengan memberikan informasi
+                                                        yang tepat kepada pengguna yang meminta informasi
+                                                        tertentu.</span></p>
+                                            </li>
+                                            <li class="mb-1">
+                                                <p><i class="ri-check-fill text-success"></i><span>Produktivitas: Chat
+                                                        AI dapat membantu meningkatkan produktivitas dengan menangani
+                                                        tugas-tugas rutin dan memberikan jawaban cepat kepada pelanggan
+                                                        atau pengguna, sehingga Anda dapat mengalokasikan waktu untuk
+                                                        mengerjakan pekerjaan yang lebih menantang.</span></p>
+                                            </li>
                                         </ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-5 col-lg-6 col-md-7 col-sm-10 position-relative mx-auto">
-							<div class="auth-content py-md-0 py-8">
-								<form class="w-100" method="POST" action="{{ route('register') }}">
-                                @csrf
-									<div class="row">
-										<div class="col-lg-10 mx-auto">
-											<h4 class="text-center mb-4">Sign Up to AI Autobot</h4>
-											<button class="btn btn-outline-dark btn-rounded btn-block mb-3"><span><span class="icon"><i class="fab fa-google"></i></span><span>Sign Up with Gmail</span></span></button>
-											<div class="title-sm title-wth-divider divider-center my-4"><span>Or</span></div>
-											<div class="row gx-3">
-												<div class="form-group col-lg-6">
-													<label class="form-label">Nama</label>
-													<input class="form-control" placeholder="Silakan Masukan Nama" value="" type="text" name="name" :value="old('name')" required autofocus>
-												</div>
-												<div class="form-group col-lg-6">
-													<label class="form-label">Username</label>
-													<input class="form-control" placeholder="Silakan Masukan Username" value="" type="text" name="username" :value="old('username')" required autofocus >
-												</div>
-												<div class="form-group col-lg-12">
-													<label class="form-label">Email</label>
-													<input class="form-control" placeholder="Silakan Masukan Email" value="" type="text" name="email" :value="old('email')" required>
-												</div>
-												<div class="form-group col-lg-12">
-													<label class="form-label">Password</label>
-													<div class="input-group password-check">
-														<span class="input-affix-wrapper affix-wth-text">
-															<input class="form-control" placeholder="6+ characters" value="" type="password" name="password" required autocomplete="new-password">
-															<a href="#" class="input-suffix text-primary text-uppercase fs-8 fw-medium">
-																<span>Tampilkan</span>
-																<span class="d-none">Sembuyikan</span>
-															</a>
-														</span>
-													</div>
-												</div>
-											</div>
-											
-											<div class="form-check form-check-sm mb-3">
-												<input type="checkbox" class="form-check-input" id="logged_in" checked>
-												<label class="form-check-label text-muted fs-8" for="logged_in">Dengan membuat akun, Anda menyatakan bahwa Anda telah membaca dan setuju dengan <a href="#">Ketentuan penggunaan</a> dan <a href="#">Kebijakan privasi</a>.</label>
-											</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6 col-md-7 col-sm-10 position-relative mx-auto">
+                            <div class="auth-content py-md-0 py-8">
+
+                                <form class="w-100" method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-lg-10 mx-auto">
+                                            <h4 class="text-center mb-4">Sign Up to AI Autobot</h4>
+                                            <a href="{{ route('social.login', 'google') }}"
+                                                class="btn btn-outline-dark btn-rounded btn-block mb-3"><span><span
+                                                        class="icon"><i class="fab fa-google"></i></span><span>Sign Up
+                                                        with Gmail</span></span></a>
+                                            <div class="title-sm title-wth-divider divider-center my-4"><span>Or</span>
+                                            </div>
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                            <div class="row gx-3">
+                                                <div class="form-group col-lg-12">
+                                                    <label class="form-label">Nama</label>
+                                                    <input
+                                                        class="form-control @error('name')
+                                                        is-invalid
+                                                    @enderror"
+                                                        placeholder="Silakan Masukan Nama" type="text" name="name"
+                                                        value="{{ old('name') }}" required autofocus>
+                                                    @error('name')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group col-lg-12">
+                                                    <label class="form-label">Email</label>
+                                                    <input
+                                                        class="form-control @error('email')
+                                                    is-invalid
+                                                @enderror"
+                                                        placeholder="Silakan Masukan Email" type="text"
+                                                        name="email" value="{{ old('email') }}" required>
+                                                    @error('email')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group col-lg-12">
+                                                    <label class="form-label">Password</label>
+                                                    <div class="input-group password-check">
+                                                        <span class="input-affix-wrapper affix-wth-text">
+                                                            <input
+                                                                class="form-control @error('password')
+                                                            is-invalid
+                                                        @enderror"
+                                                                placeholder="6+ characters" type="password"
+                                                                name="password" required autocomplete="new-password">
+                                                            <a href="#"
+                                                                class="input-suffix text-primary text-uppercase fs-8 fw-medium">
+                                                                <span>Tampilkan</span>
+                                                                <span class="d-none">Sembuyikan</span>
+                                                            </a>
+                                                            @error('password')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-12">
+                                                    <label class="form-label">konfirmasi password</label>
+                                                    <div class="input-group password-check">
+                                                        <span class="input-affix-wrapper affix-wth-text">
+                                                            <input
+                                                                class="form-control @error('password_confirmation')
+                                                            is-invalid
+                                                        @enderror"
+                                                                placeholder="6+ characters" type="password"
+                                                                name="password_confirmation" required
+                                                                autocomplete="new-password">
+                                                            <a href="#"
+                                                                class="input-suffix text-primary text-uppercase fs-8 fw-medium">
+                                                                <span>Tampilkan</span>
+                                                                <span class="d-none">Sembuyikan</span>
+                                                            </a>
+                                                            @error('password_confirmation')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-check form-check-sm mb-3">
+                                                <input type="checkbox" class="form-check-input" id="logged_in"
+                                                    checked>
+                                                <label class="form-check-label text-muted fs-8" for="logged_in">Dengan
+                                                    membuat akun, Anda menyatakan bahwa Anda telah membaca dan setuju
+                                                    dengan <a href="#">Ketentuan penggunaan</a> dan <a
+                                                        href="#">Kebijakan privasi</a>.</label>
+                                            </div>
                                             <x-button class="btn btn-primary btn-rounded btn-uppercase btn-block">
                                                 {{ __('Buat Account') }}
                                             </x-button>
-											<p class="p-xs mt-2 text-center">Already a member ? <a href="login"><u>Sign In</u></a></p>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					<!-- /Row -->
-				</div>
-				<!-- /Container -->
-			</div>
-			<!-- /Page Body -->
+                                            <p class="p-xs mt-2 text-center">Already a member ? <a
+                                                    href="login"><u>Sign In</u></a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Row -->
+                </div>
+                <!-- /Container -->
+            </div>
+            <!-- /Page Body -->
 
-			<!-- Page Footer -->
-			<div class="hk-footer">
-				<footer class="container-xxl footer">
-					<div class="row">
-						<div class="col-xl-8">
-							<p class="footer-text"><span class="copy-text">Jampack © 2022 All rights reserved.</span> <a href="#" class="" target="_blank">Privacy Policy</a><span class="footer-link-sep">|</span><a href="#" class="" target="_blank">T&C</a><span class="footer-link-sep">|</span><a href="#" class="" target="_blank">System Status</a></p>
-						</div>
-						<div class="col-xl-4">
-							<a href="#" class="footer-extr-link link-default"><span class="feather-icon"><i data-feather="external-link"></i></span><u>Send feedback to our help forum</u></a>
-						</div>
-					</div>
-				</footer>
-			</div>
-			<!-- / Page Footer -->
+            <!-- Page Footer -->
+            <div class="hk-footer">
+                <footer class="container-xxl footer">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <p class="footer-text"><span class="copy-text">Jampack © 2022 All rights reserved.</span>
+                                <a href="#" class="" target="_blank">Privacy Policy</a><span
+                                    class="footer-link-sep">|</span><a href="#" class=""
+                                    target="_blank">T&C</a><span class="footer-link-sep">|</span><a href="#"
+                                    class="" target="_blank">System Status</a>
+                            </p>
+                        </div>
+                        <div class="col-xl-4">
+                            <a href="#" class="footer-extr-link link-default"><span class="feather-icon"><i
+                                        data-feather="external-link"></i></span><u>Send feedback to our help
+                                    forum</u></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- / Page Footer -->
 
-		</div>
-		<!-- /Main Content -->
-	</div>
+        </div>
+        <!-- /Main Content -->
+    </div>
     <!-- /Wrapper -->
 
-	<!-- jQuery -->
-    <script src="{{ asset('html/classic/vendors/jquery/dist/jquery.min.js') }]"></script>
+    <!-- jQuery -->
+    <script src="{{ asset('html/classic/vendors/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JS -->
-   	<script src="{{ asset('html/classic/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }]"></script>
+    <script src="{{ asset('html/classic/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- FeatherIcons JS -->
-    <script src="{{ asset('html/classic/dist/js/feather.min.js') }]"></script>
+    <script src="{{ asset('html/classic/dist/js/feather.min.js') }}"></script>
 
     <!-- Fancy Dropdown JS -->
-    <script src="{{ asset('html/classic/dist/js/dropdown-bootstrap-extended.js') }]"></script>
+    <script src="{{ asset('html/classic/dist/js/dropdown-bootstrap-extended.js') }}"></script>
 
-	<!-- Simplebar JS -->
-	<script src="{{ asset('html/classic/vendors/simplebar/dist/simplebar.min.js') }]"></script>
-	
-	<!-- Init JS -->
-	<script src="{{ asset('html/classic/dist/js/init.js') }]"></script>
+    <!-- Simplebar JS -->
+    <script src="{{ asset('html/classic/vendors/simplebar/dist/simplebar.min.js') }}"></script>
+
+    <!-- Init JS -->
+    <script src="{{ asset('html/classic/dist/js/init.js') }}"></script>
 </body>
+
 </html>
