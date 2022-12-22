@@ -35,6 +35,17 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
+    Route::group(['middleware' => ['auth']], function () {
+        /*
+        *
+        *  Users Routes
+        *
+        * ---------------------------------------------------------------------
+        */
+        $module_name = 'users';
+        $controller_name = 'UserController';     
+
+    });
 });
 /*
 *
@@ -42,13 +53,33 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 * These routes need view-client permission
 * --------------------------------------------------------------------
 */
-Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(function() {
-    Route::prefix('overview')->name('overview.')->group(function() {
-        Route::get('', [UserController::class,'index'])->name('index');
-    });
-    
-    Route::prefix('device')->name('device.')->group(function() {
-        Route::get('', [UserController::class,'device'])->name('index');
+Route::group(['namespace' => 'App\Http\Controllers\Client', 'as' => 'client.'], function () {
+    Route::group(['middleware' => ['auth', 'can:view_client']], function () {
+        /*
+        *
+        *  client Routes
+        *
+        * ---------------------------------------------------------------------
+        */
+        $module_name = 'client';
+        $controller_name = 'ClientController';
+
+        //client
+        Route::get("$module_name", "$controller_name@index")->name("$module_name");
+        Route::get("$module_name/create", "$controller_name@create")->name("$module_name.create");
+        Route::post("$module_name", "$controller_name@store")->name("$module_name.store");
+        Route::get("$module_name/{id}/edit", "$controller_name@edit")->name("$module_name.edit");
+        Route::put("$module_name/{id}", "$controller_name@update")->name("$module_name.update");
+        //device
+        Route::get("$module_name/device", "$controller_name@device")->name("$module_name.device");
+        Route::get("$module_name/{id}/device/create", "$controller_name@device_create")->name("$module_name.device.create");
+        Route::post("$module_name/{id}/device", "$controller_name@device_store")->name("$module_name.device.store");
+        Route::get("$module_name/{id}/device/{device_id}/edit", "$controller_name@device_edit")->name("$module_name.device.edit");
+        Route::put("$module_name/{id}/device/{device_id}", "$controller_name@device_update")->name("$module_name.device.update");
+        Route::delete("$module_name/{id}/device/{device_id}", "$controller_name@device_destroy")->name("$module_name.device.destroy");
+        //overview
+        Route::get("$module_name/{id}/overview", "$controller_name@overview")->name("$module_name.overview");
+        //history
     });
 
 });

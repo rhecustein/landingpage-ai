@@ -4,7 +4,6 @@ use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
-use App\Http\Controllers\Client\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +34,17 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
+    Route::group(['middleware' => ['auth']], function () {
+        /*
+        *
+        *  Users Routes
+        *
+        * ---------------------------------------------------------------------
+        */
+        $module_name = 'users';
+        $controller_name = 'UserController';     
+
+    });
 });
 /*
 *
@@ -42,17 +52,33 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 * These routes need view-client permission
 * --------------------------------------------------------------------
 */
-Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(function() {
-    Route::prefix('overview')->name('overview.')->group(function() {
-        Route::get('', [UserController::class,'index'])->name('index');
-    });
-    
-    Route::prefix('device')->name('device.')->group(function() {
-        Route::get('', [UserController::class,'device'])->name('index');
-    });
-
-});
-        
+Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'prefix' => 'client', 'as' => 'client.', 'middleware' => ['auth', 'can:view_client']], function () {
+    /*
+    *
+    *  Users Routes
+    *
+    * ---------------------------------------------------------------------
+    */
+    $module_name = 'users';
+    $controller_name = 'UserController';
+    Route::get("$module_name", "$controller_name@index")->name("$module_name");
+    Route::get("$module_name/create", "$controller_name@create")->name("$module_name.create");
+    Route::post("$module_name", "$controller_name@store")->name("$module_name.store");
+    Route::get("$module_name/{id}", "$controller_name@show")->name("$module_name.show");
+    Route::get("$module_name/{id}/edit", "$controller_name@edit")->name("$module_name.edit");
+    Route::put("$module_name/{id}", "$controller_name@update")->name("$module_name.update");
+    Route::delete("$module_name/{id}", "$controller_name@destroy")->name("$module_name.destroy");
+    Route::get("$module_name/{id}/delete", "$controller_name@delete")->name("$module_name.delete");
+    Route::get("$module_name/{id}/restore", "$controller_name@restore")->name("$module_name.restore");
+    Route::get("$module_name/{id}/forceDelete", "$controller_name@forceDelete")->name("$module_name.forceDelete");
+    Route::get("$module_name/{id}/changePassword", "$controller_name@changePassword")->name("$module_name.changePassword");
+    Route::put("$module_name/{id}/updatePassword", "$controller_name@updatePassword")->name("$module_name.updatePassword");
+    Route::get("$module_name/{id}/changeStatus", "$controller_name@changeStatus")->name("$module_name.changeStatus");
+    Route::get("$module_name/{id}/changeEmail", "$controller_name@changeEmail")->name("$module_name.changeEmail");
+    Route::put("$module_name/{id}/updateEmail", "$controller_name@updateEmail")->name("$module_name.updateEmail");
+    Route::get("$module_name/{id}/changeAvatar", "$controller_name@changeAvatar")->name("$module_name.changeAvatar");
+    Route::put("$module_name/{id}/updateAvatar", "$controller_name@updateAvatar")->name("$module_name.updateAvatar");
+    Route::get("$module_name/{id}/changeProfile", "$controller_name@changeProfile")->name("$module_name.changeProfile");
 
 /*
 *

@@ -46,7 +46,6 @@ Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(funct
     Route::prefix('overview')->name('overview.')->group(function() {
         Route::get('', [UserController::class,'index'])->name('index');
     });
-    
     Route::prefix('device')->name('device.')->group(function() {
         Route::get('', [UserController::class,'device'])->name('index');
     });

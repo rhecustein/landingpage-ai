@@ -4,7 +4,6 @@ use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
-use App\Http\Controllers\Client\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,24 +34,72 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
-});
-/*
-*
-* Client Routes
-* These routes need view-client permission
-* --------------------------------------------------------------------
-*/
-Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(function() {
-    Route::prefix('overview')->name('overview.')->group(function() {
-        Route::get('', [UserController::class,'index'])->name('index');
-    });
-    
-    Route::prefix('device')->name('device.')->group(function() {
-        Route::get('', [UserController::class,'device'])->name('index');
-    });
+    Route::group(['middleware' => ['auth']], function () {
+        /*
+        *
+        *  Users Routes
+        *
+        * ---------------------------------------------------------------------
+        */
+        $module_name = 'users';
+        $controller_name = 'UserController';
+        // overview
+        Route::get("overview", ['as' => "$module_name.overview", 'uses' => "$controller_name@overview"]);
 
+        // chatbot ai
+        Route::get("chatbot", ['as' => "$module_name.chatbot", 'uses' => "$controller_name@chatbot"]);
+
+        // voice ai
+        Route::get("voice", ['as' => "$module_name.voice", 'uses' => "$controller_name@voice"]);
+
+        //usage ai
+        Route::get("usage", ['as' => "$module_name.usage", 'uses' => "$controller_name@usage"]);
+
+        //device ai
+        Route::get("device", ['as' => "$module_name.device", 'uses' => "$controller_name@device"]);
+        Route::get("device/create", ['as' => "$module_name.device_create", 'uses' => "$controller_name@device_create"]);
+        Route::post("device", ['as' => "$module_name.device_store", 'uses' => "$controller_name@device_store"]);
+        Route::get("device/{device}/edit", ['as' => "$module_name.device_edit", 'uses' => "$controller_name@device_edit"]);
+        Route::put("device/{device}", ['as' => "$module_name.device_update", 'uses' => "$controller_name@device_update"]);
+        Route::delete("device/{device}", ['as' => "$module_name.device_delete", 'uses' => "$controller_name@device_delete"]);
+
+        //tagihan ai
+        Route::get("tagihan", ['as' => "$module_name.tagihan", 'uses' => "$controller_name@tagihan"]);
+
+        //api key
+        Route::get("apikey", ['as' => "$module_name.apikey", 'uses' => "$controller_name@apikey"]);
+
+        //offers
+        Route::get("offers", ['as' => "$module_name.offers", 'uses' => "$controller_name@offers"]);
+
+        //referral
+        Route::get("referral", ['as' => "$module_name.referral", 'uses' => "$controller_name@referral"]);
+
+        //agent
+        Route::get("agent", ['as' => "$module_name.agent", 'uses' => "$controller_name@agent"]);
+
+        //payment method
+        Route::get("paymentmethod", ['as' => "$module_name.paymentmethod", 'uses' => "$controller_name@paymentmethod"]);
+
+        //subscription
+        Route::get("subscription", ['as' => "$module_name.subscription", 'uses' => "$controller_name@subscription"]);
+
+        //settings
+        Route::get("settings", ['as' => "$module_name.settings", 'uses' => "$controller_name@settings"]);
+
+        //raise ticket
+        Route::get("raiseticket", ['as' => "$module_name.raiseticket", 'uses' => "$controller_name@raiseticket"]);
+
+        //profile
+        Route::get('profile/{id}', ['as' => "$module_name.profile", 'uses' => "$controller_name@profile"]);
+        Route::get('profile/{id}/edit', ['as' => "$module_name.profileEdit", 'uses' => "$controller_name@profileEdit"]);
+        Route::patch('profile/{id}/edit', ['as' => "$module_name.profileUpdate", 'uses' => "$controller_name@profileUpdate"]);
+        Route::get('profile/changePassword/{username}', ['as' => "$module_name.changePassword", 'uses' => "$controller_name@changePassword"]);
+        Route::patch('profile/changePassword/{username}', ['as' => "$module_name.changePasswordUpdate", 'uses' => "$controller_name@changePasswordUpdate"]);
+        Route::get("$module_name/emailConfirmationResend/{id}", ['as' => "$module_name.emailConfirmationResend", 'uses' => "$controller_name@emailConfirmationResend"]);
+        Route::delete("$module_name/userProviderDestroy", ['as' => "$module_name.userProviderDestroy", 'uses' => "$controller_name@userProviderDestroy"]);
+    });
 });
-        
 
 /*
 *
@@ -61,7 +108,7 @@ Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(funct
 * --------------------------------------------------------------------
 */
 $module_name = 'users';
-$controller_name = 'UserController';
+        $controller_name = 'UserController';
 Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
 
     /**

@@ -4,7 +4,6 @@ use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\UserController as ClientUserController;
-use App\Http\Controllers\Client\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,24 +34,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     Route::get('terms', 'FrontendController@terms')->name('terms');
 
-});
-/*
-*
-* Client Routes
-* These routes need view-client permission
-* --------------------------------------------------------------------
-*/
-Route::prefix('user')->name('user.')->middleware(['IsUser','auth'])->group(function() {
-    Route::prefix('overview')->name('overview.')->group(function() {
-        Route::get('', [UserController::class,'index'])->name('index');
-    });
-    
-    Route::prefix('device')->name('device.')->group(function() {
-        Route::get('', [UserController::class,'device'])->name('index');
-    });
+    Route::group(['middleware' => ['auth']], function () {
+        /*
+        *
+        *  Users Routes
+        *
+        * ---------------------------------------------------------------------
+        */
+        $module_name = 'users';
+        $controller_name = 'UserController';     
 
+    });
 });
-        
+
 
 /*
 *

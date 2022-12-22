@@ -21,8 +21,6 @@ trait Authorizable
         'destroy'   => 'delete',
         'restore'   => 'restore',
         'trashed'   => 'restore',
-        'delete'    => 'delete',
-        'device'    => 'view',
     ];
 
     /**
