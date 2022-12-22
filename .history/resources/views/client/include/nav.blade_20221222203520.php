@@ -7,7 +7,7 @@
                     class="icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span></button>
 
             <!-- Search -->
-           <p>Launching 1 Janurari 2023 untuk semua fitur dan manaafkan secara gratis.</p>
+           <p>launching 1 Janurari 2023 untuk semua fitur</p>
             <!-- /Search -->
         </div>
         <!-- /Start Nav -->

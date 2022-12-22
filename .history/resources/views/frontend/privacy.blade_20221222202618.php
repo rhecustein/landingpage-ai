@@ -6,7 +6,7 @@
 <div class="page-header page-header-small clear-filter" filter-color="teal">
     <div class="page-header-image" data-parallax="true" style="background-image:url('{{asset('img/cover-01.jpg')}}');">
     </div>
-    <div class="md:container md:mx-auto">
+    <div class="container">
         <h3 class="mx-2 title mt-2 text-slate-200">
             Privacy Policy - Autobot AI
         </h3>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="section">
-    <div class="md:container md:mx-auto text-center text-slate-200">
+    <div class="container text-center text-slate-200">
         <strong>Privacy Policy</strong>
 
         <p class="container mx-5 mt-4">Kami di autoboot.co.id menghargai privasi Anda dan menghormati hak-hak privasi Anda. <br>Kami berkomitmen untuk melindungi informasi pribadi yang Anda berikan kepada kami saat menggunakan layanan kami.</p>

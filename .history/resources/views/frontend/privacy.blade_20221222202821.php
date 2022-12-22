@@ -6,7 +6,7 @@
 <div class="page-header page-header-small clear-filter" filter-color="teal">
     <div class="page-header-image" data-parallax="true" style="background-image:url('{{asset('img/cover-01.jpg')}}');">
     </div>
-    <div class="md:container md:mx-auto">
+    <div class="md:container text-center md:mx-auto">
         <h3 class="mx-2 title mt-2 text-slate-200">
             Privacy Policy - Autobot AI
         </h3>

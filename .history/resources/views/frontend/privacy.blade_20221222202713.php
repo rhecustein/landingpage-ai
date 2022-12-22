@@ -14,7 +14,7 @@
 </div>
 
 <div class="section">
-    <div class="md:container md:mx-auto text-center text-slate-200">
+    <div class="md:container md:mx-auto text-slate-200">
         <strong>Privacy Policy</strong>
 
         <p class="container mx-5 mt-4">Kami di autoboot.co.id menghargai privasi Anda dan menghormati hak-hak privasi Anda. <br>Kami berkomitmen untuk melindungi informasi pribadi yang Anda berikan kepada kami saat menggunakan layanan kami.</p>

@@ -4,15 +4,6 @@
 <head>
     @include('client.include.head')
     <!--Start of Tawk.to Script-->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XV80XTD569"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XV80XTD569');
-    </script>
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -101,7 +92,7 @@
                     <div class="row">
                         <div class="col-xl-8">
                             <p class="footer-text"><span class="copy-text">Autobot Ws © 2022 All rights reserved.</span>
-                                <a href="#" class="https://ai.autobot.co.id/privacy" target="_blank">Privacy Policy</a><span
+                                <a href="#" class="{{ route('privacy') }}" target="_blank">Privacy Policy</a><span
                                     class="footer-link-sep">|</span><a href="#" class=""
                                     target="_blank">T&C</a><span class="footer-link-sep">|</span><a href="#"
                                     class="" target="_blank">System Status</a>
