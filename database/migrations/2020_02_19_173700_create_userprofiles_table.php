@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('user_id');
 
             $table->string('name');
+            $table->unsignedInteger('credits')->default(0);
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('username')->nullable();

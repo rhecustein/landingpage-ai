@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Frontend\API\CheckTrialController;
+use App\Http\Controllers\Frontend\API\CreditsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/checks', [CheckTrialController::class, 'checks']);
+Route::get('/credits', [CreditsController::class, 'credits']);

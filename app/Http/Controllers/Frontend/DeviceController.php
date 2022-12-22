@@ -37,8 +37,7 @@ class DeviceController extends Controller
             ->where('is_deleted', 0)
             ->get();
         return view(
-            "client.users.device.create",
-            compact('devices')
+            "client.users.device.create"
         );
     }
 
