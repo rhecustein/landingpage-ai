@@ -79,8 +79,8 @@ Route::name('user.')->middleware(['auth', 'isUser'])->group(function () {
     Route::get('chatbot/create', [ChatBotController::class, 'create'])->name('chatbot.create');
     Route::post('chatbot', [ChatBotController::class, 'store'])->name('chatbot.store');
     //package
-    Route::get('package', [PackageController::class, 'index'])->name('package');
-    Route::get('package/{id}', [PackageController::class, 'packageDetail'])->name('packageDetail');
+    Route::get('package', [ClientController::class, 'package'])->name('package');
+    Route::get('package/{id}', [ClientController::class, 'packageDetail'])->name('packageDetail');
 });
 
 

@@ -54,7 +54,7 @@ class SocialLoginController extends Controller
 
             Auth::login($authUser, true);
         } catch (Exception $e) {
-            return redirect('/devices');
+            return redirect('/');
         }
 
         return redirect()->intended(RouteServiceProvider::HOME);
