@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Device extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'name', 'phone'];
+    protected $fillable = ['user_id', 'name', 'phone', 'is_deleted'];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -17,6 +17,10 @@ class Device extends Model
     public function tags()
     {
         return $this->hasMany(DeviceTag::class);
+    }
+    public function scopeCurrentUser()
+    {
+        return $this->where('user_id', auth()->user()->id);
     }
 
     /**

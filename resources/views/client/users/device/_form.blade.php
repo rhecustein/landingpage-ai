@@ -1,24 +1,57 @@
-<form action="{{ route('frontend.users.device_store') }}" method="POST">
+<form
+    action="{{ isset($device) ? route('frontend.users.device_update', $device->id) : route('frontend.users.device_store') }}"
+    method="POST">
+    @if (isset($device))
+        @method('put')
+    @endif
     @csrf
-    <div class="mb-3">
+    <div class="mb-3 has-validation">
         <label for="name" class="form-label">Nama Device</label>
-        <input required type="text" class="form-control" id="name" name="name" placeholder="Nama.."
-            value="{{ old('name') }}">
+        <input type="text" class="form-control
+        @error('name')
+            is-invalid
+        @enderror"
+            id="name" name="name" placeholder="Nama.." value="{{ old('name', $device->name ?? '') }}">
+        @error('name')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-    <div>
+    <div class="has-validation">
         <label for="phone" class="form-label">Phone</label>
-        <input required type="text" class="form-control" id="phone" name="phone" placeholder="No Telepon.."
-            value="{{ old('phone') }}">
+        <input type="text" class="form-control
+        @error('phone')
+        is-invalid
+    @enderror"
+            id="phone" name="phone" placeholder="No Telepon.." value="{{ old('phone', $device->phone ?? '') }}">
+        @error('phone')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-    <div>
+    <div class="has-validation">
         <label for="tags" class="form-label">Tag</label>
-        <select required id="tags" class="form-control" multiple="multiple">
+
+        <select id="tags" class="form-control @error('tags')
+        is-invalid
+    @enderror" multiple="multiple"
+            name='tags[][name]'>
+            @foreach (old('tags', isset($device) ? $device->tags : []) as $tag)
+                <option selected="selected">{{ $tag['name'] }}</option>
+            @endforeach
         </select>
+        @error('tags')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
     <div class="row mt-2">
         <div class="col-md-3">
             <button type="submit" class="btn btn-primary">
-                simpan
+                {{ isset($device) ? 'update' : 'simpan' }}
             </button>
         </div>
     </div>

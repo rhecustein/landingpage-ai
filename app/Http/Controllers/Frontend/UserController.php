@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Authorizable;
-use App\Events\Frontend\UserProfileUpdated;
-use App\Http\Controllers\Controller;
-use App\Models\Device;
-use App\Models\Permission;
+use Exception;
 use App\Models\Role;
 use App\Models\User;
+use App\Authorizable;
+use App\Models\Device;
+use App\Models\Permission;
 use App\Models\Userprofile;
-use App\Models\UserProvider;
-use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use App\Models\UserProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use App\Events\Frontend\UserProfileUpdated;
 
 class UserController extends Controller
 {
@@ -176,7 +177,10 @@ class UserController extends Controller
         $body_class = 'device-page';
 
         $meta_page_type = 'device';
-        $devices = Device::with('tags')->where('is_deleted', 0)->get();
+        $devices = Device::with('tags')
+            ->currentUser()
+            ->where('is_deleted', 0)
+            ->get();
 
         return view(
             "client.$module_name.device.index",
@@ -205,20 +209,52 @@ class UserController extends Controller
             compact('module_title', 'module_name', 'module_path', 'module_icon', 'module_action', 'module_name_singular', 'users', 'body_class', 'meta_page_type')
         );
     }
+    public function device_edit(Device $device)
+    {
+        abort_if(!$device->user()->is(auth()->user()), 401);
+        $module_name = $this->module_name;
+        return view(
+            "client.$module_name.device.edit",
+            compact('device')
+        );
+    }
     public function device_store(Request $request)
     {
         $data = $request->validate([
             'name' => ['required'],
-            'phone' => ['required'],
+            'phone' => ['required', 'unique:devices,phone'],
             'tags' => ['required', 'array'],
+            'tags.*' => ['required'],
         ]);
+        $device = Device::create($data + ['user_id' => auth()->user()->id]);
+        $device->tags()->createMany($data['tags']);
+        return redirect()->route('frontend.users.device');
+    }
+    public function device_update(Request $request, Device $device)
+    {
+        abort_if(!$device->user()->is(auth()->user()), 401);
 
-        $device = Device::create([
-            'name' => $data['name'],
-            'phone' => $data['phone'],
+        $data = $request->validate([
+            'name' => ['required'],
+            'phone' => ['required', 'unique:devices,phone,' . $device->id],
+            'tags' => ['required', 'array'],
+            'tags.*' => ['required'],
         ]);
+        $device->update($data);
+        $device->tags()->delete();
+        $device->tags()->createMany($data['tags']);
+        return redirect()->route('frontend.users.device');
 
-        dd($request->all());
+        // dd($data);
+    }
+    public function device_delete(Device $device)
+    {
+        abort_if(!$device->user()->is(auth()->user()), 401);
+        $device->update(['is_deleted' => true]);
+
+        return redirect()->route('frontend.users.device');
+
+        // dd($data);
     }
 
     public function tagihan()

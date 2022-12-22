@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class DeviceTag extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
     /**
      * Create a new factory instance for the model.
      *

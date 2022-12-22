@@ -32,12 +32,27 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center justify-content-end">
-                                    <a href="#" class="btn btn-icon btn-rounded btn-flush-primary flush-soft-hover"
+                                    <a href="{{ route('frontend.users.device_edit', $device->id) }}"
+                                        class="btn btn-icon btn-rounded btn-flush-primary flush-soft-hover"
                                         data-bs-toggle="tooltip" data-bs-original-title="Edit"><span class="icon"><span
                                                 class="feather-icon"><i data-feather="edit-3"></i></span></span></a>
-                                    <a href="#" class="btn btn-icon btn-rounded btn-flush-danger flush-soft-hover"
-                                        data-bs-toggle="tooltip" data-bs-original-title="Delete"><span class="icon"><span
-                                                class="feather-icon"><i data-feather="trash-2"></i></span></span></a>
+                                    <span>
+                                        <form action="{{ route('frontend.users.device_delete', $device->id) }}"
+                                            method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button onclick="return confirm('Are you sure you want to delete this item?');"
+                                                type="submit"
+                                                class="btn btn-icon btn-rounded btn-flush-danger flush-soft-hover"
+                                                data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                <span class="icon">
+                                                    <span class="feather-icon">
+                                                        <i data-feather="trash-2"></i>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </form>
+                                    </span>
                                 </div>
                             </td>
                         </tr>
