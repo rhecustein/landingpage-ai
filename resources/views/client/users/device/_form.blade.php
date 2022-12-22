@@ -4,7 +4,7 @@
         @method('put')
     @endif
     @csrf
-    <div class="mb-3 has-validation">
+    <div class="mb-3 has-validation mt-2">
         <label for="name" class="form-label">Nama Device</label>
         <input type="text" class="form-control
         @error('name')
@@ -18,7 +18,7 @@
         @enderror
     </div>
     <div class="has-validation">
-        <label for="phone" class="form-label">Phone</label>
+        <label for="phone" class="form-label">Phone ( diawali dengan kode negara 62813... )</label>
         <input type="text" class="form-control
         @error('phone')
         is-invalid
