@@ -140,17 +140,15 @@
             <br><br>
             Chat AI juga dapat membantu meningkatkan efisiensi dan produktivitas, karena dapat membantu menangani tugas-tugas yang rutin dan memberikan jawaban cepat kepada pelanggan atau pengguna.
             </p>
-            <div class="row">
-            <div class="justify-center">
+            <div class="flex justify-center">
                 <a href="https://wa.me/6282119908751" class="inline-flex text-white bg-green-700 border-0 py-2 px-6 focus:outline-none hover:bg-gray-800 rounded text-lg">
                     Live Chat
                 </a>
             </div>
-            <div class="justify-center mt-4">
-                <a href="{{ route('register') }}" class="inline-flex text-white bg-teal-700 border-0 py-2 px-6 focus:outline-none hover:bg-gray-800 rounded text-lg">
+            <div class="flex justify-center">
+                <a href="https://wa.me/6282119908751" class="inline-flex text-white bg-blue-700 border-0 py-2 px-6 focus:outline-none hover:bg-gray-800 rounded text-lg">
                     Register
                 </a>
-            </div>
             </div>
         </div>
     </div>
