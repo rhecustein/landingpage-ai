@@ -3,7 +3,7 @@
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\UserController as ClientUserController;
+use App\Http\Controllers\Backend\BackendController\UserController as ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,7 @@ use App\Http\Controllers\Frontend\UserController as ClientUserController;
 */
 
 // Auth Routes
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
@@ -43,6 +43,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
         */
         $module_name = 'users';
         $controller_name = 'UserController';
+
+        Route::group(['namespace' => 'App\Http\Controllers\Backend\BackendController\UserController', 'as' => 'client.'], function () {
+            Route::get('client', 'clientController@overview')->name('index');
+            Route::get('client/overview', 'clientController@create')->name('create');
+            Route::post('client/store', 'clientController@store')->name('store');
+            Route::get('client/{id}/edit', 'clientController@edit')->name('edit');
+            Route::patch('client/{id}/update', 'clientController@update')->name('update');
+            Route::delete('client/{id}/destroy', 'clientController@destroy')->name('destroy');
+        });
         // overview
         Route::get("overview", ['as' => "$module_name.overview", 'uses' => "$controller_name@overview"]);
 
@@ -57,11 +66,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
 
         //device ai
         Route::get("device", ['as' => "$module_name.device", 'uses' => "$controller_name@device"]);
-        Route::get("device/create", ['as' => "$module_name.device_create", 'uses' => "$controller_name@device_create"]);
-        Route::post("device", ['as' => "$module_name.device_store", 'uses' => "$controller_name@device_store"]);
-        Route::get("device/{device}/edit", ['as' => "$module_name.device_edit", 'uses' => "$controller_name@device_edit"]);
-        Route::put("device/{device}", ['as' => "$module_name.device_update", 'uses' => "$controller_name@device_update"]);
-        Route::delete("device/{device}", ['as' => "$module_name.device_delete", 'uses' => "$controller_name@device_delete"]);
 
         //tagihan ai
         Route::get("tagihan", ['as' => "$module_name.tagihan", 'uses' => "$controller_name@tagihan"]);

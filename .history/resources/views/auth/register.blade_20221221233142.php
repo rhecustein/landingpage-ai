@@ -107,7 +107,7 @@
 											
 											<div class="form-check form-check-sm mb-3">
 												<input type="checkbox" class="form-check-input" id="logged_in" checked>
-												<label class="form-check-label text-muted fs-8" for="logged_in">Dengan membuat akun, Anda menyatakan bahwa Anda telah membaca dan setuju dengan <a href="#">Ketentuan penggunaan</a> dan <a href="#">Kebijakan privasi</a>.</label>
+												<label class="form-check-label text-muted fs-8" for="logged_in">By creating an account you specify that you have read and agree with our <a href="#">Tearms of use</a> and <a href="#">Privacy policy</a>. We may keep you inform about latest updates through our default <a href="#">notification settings</a></label>
 											</div>
                                             <x-button class="btn btn-primary btn-rounded btn-uppercase btn-block">
                                                 {{ __('Buat Account') }}

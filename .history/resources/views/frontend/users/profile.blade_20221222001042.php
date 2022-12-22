@@ -124,6 +124,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer justify-content-between">
+                            <div>
+                                <a href="#"><i class="bi bi-heart-fill text-primary"></i>30K</a>
+                            </div>
+                            <div>
+                                <a href="#">1K comments</a>
+                                <a href="#">12 shares</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

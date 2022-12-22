@@ -31,7 +31,7 @@
             </div>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('$module_name.chatbot') }}">
+                    <a class="nav-link" href="">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +47,7 @@
                             </span>
                         </span>
                         <span class="nav-link-text">ChatBot AI</span>
+                        <span class="badge badge-sm badge-soft-pink ms-auto">On Dev</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -198,7 +199,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="apikey">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code"
@@ -212,7 +213,6 @@
                             </span>
                         </span>
                         <span class="nav-link-text">Api Key</span>
-                        <span class="badge badge-sm badge-soft-pink ms-auto">On Dev</span>
                     </a>
                 </li>
             </ul>
@@ -224,7 +224,7 @@
             </div>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="" target="_blank">
+                    <a class="nav-link" href="https://nubra-ui.hencework.com/" target="_blank">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-code-2"
@@ -239,7 +239,6 @@
                             </span>
                         </span>
                         <span class="nav-link-text">Documentation</span>
-                        <span class="badge badge-sm badge-soft-pink ms-auto">On Dev</span>
                     </a>
                 </li>
             </ul>
@@ -248,7 +247,7 @@
             <div class="card-body">
                 <h5 class="h5">Membangun Aplikasi dengan Cepat</h5>
                 <p class="p-sm card-text">Untuk membantu segala kebutuhan anda.</p>
-                <a href="" target="_blank" class="btn btn-primary btn-block">Go
+                <a href="https://nubra-ui.hencework.com/" target="_blank" class="btn btn-primary btn-block">Go
                     Autobot.co.id</a>
             </div>
         </div>

@@ -3,7 +3,7 @@
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\UserController as ClientUserController;
+use App\Http\Controllers\Frontend\UserController as ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,7 @@ use App\Http\Controllers\Frontend\UserController as ClientUserController;
 */
 
 // Auth Routes
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
 // Language Switch
 Route::get('language/{language}', [LanguageController::class, 'switch'])->name('language.switch');
@@ -43,53 +43,28 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
         */
         $module_name = 'users';
         $controller_name = 'UserController';
-        // overview
-        Route::get("overview", ['as' => "$module_name.overview", 'uses' => "$controller_name@overview"]);
 
-        // chatbot ai
-        Route::get("chatbot", ['as' => "$module_name.chatbot", 'uses' => "$controller_name@chatbot"]);
-
-        // voice ai
-        Route::get("voice", ['as' => "$module_name.voice", 'uses' => "$controller_name@voice"]);
-
-        //usage ai
-        Route::get("usage", ['as' => "$module_name.usage", 'uses' => "$controller_name@usage"]);
-
-        //device ai
-        Route::get("device", ['as' => "$module_name.device", 'uses' => "$controller_name@device"]);
-        Route::get("device/create", ['as' => "$module_name.device_create", 'uses' => "$controller_name@device_create"]);
-        Route::post("device", ['as' => "$module_name.device_store", 'uses' => "$controller_name@device_store"]);
-        Route::get("device/{device}/edit", ['as' => "$module_name.device_edit", 'uses' => "$controller_name@device_edit"]);
-        Route::put("device/{device}", ['as' => "$module_name.device_update", 'uses' => "$controller_name@device_update"]);
-        Route::delete("device/{device}", ['as' => "$module_name.device_delete", 'uses' => "$controller_name@device_delete"]);
-
-        //tagihan ai
-        Route::get("tagihan", ['as' => "$module_name.tagihan", 'uses' => "$controller_name@tagihan"]);
-
-        //api key
-        Route::get("apikey", ['as' => "$module_name.apikey", 'uses' => "$controller_name@apikey"]);
-
-        //offers
-        Route::get("offers", ['as' => "$module_name.offers", 'uses' => "$controller_name@offers"]);
-
-        //referral
-        Route::get("referral", ['as' => "$module_name.referral", 'uses' => "$controller_name@referral"]);
-
-        //agent
-        Route::get("agent", ['as' => "$module_name.agent", 'uses' => "$controller_name@agent"]);
-
-        //payment method
-        Route::get("paymentmethod", ['as' => "$module_name.paymentmethod", 'uses' => "$controller_name@paymentmethod"]);
-
-        //subscription
-        Route::get("subscription", ['as' => "$module_name.subscription", 'uses' => "$controller_name@subscription"]);
-
-        //settings
-        Route::get("settings", ['as' => "$module_name.settings", 'uses' => "$controller_name@settings"]);
-
-        //raise ticket
-        Route::get("raiseticket", ['as' => "$module_name.raiseticket", 'uses' => "$controller_name@raiseticket"]);
-
+        Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'client.'], function () {
+            Route::get('client', 'clientController@index')->name('overview');
+            Route::get('overview', 'clientController@overview')->name('overview');
+            Route::get('chatbot', 'UserController@chatbot')->name('chatbot');
+            Route::get('voice', 'clientController@voice')->name('voice');
+            Route::patch('usage', 'clientController@usage')->name('usage');
+            Route::delete('device', 'clientController@device')->name('device');
+            Route::get('tagihan', 'clientController@tagihan')->name('tagihan');
+            Route::get('apikey', 'clientController@apikey')->name('apikey');
+            Route::get('offers', 'clientController@offers')->name('offers');
+            Route::get('referral', 'clientController@referral')->name('referral');
+            Route::get('agent', 'clientController@agent')->name('agent');
+            Route::get('paymentmethod', 'clientController@paymentmethod')->name('paymentmethod');
+            Route::get('subscription', 'clientController@subscription')->name('subscription');
+            Route::get('settings', 'clientController@settings')->name('settings');
+            Route::get('raiseticket', 'clientController@raiseticket')->name('raiseticket');
+            Route::get('ticket', 'clientController@ticket')->name('ticket');
+            Route::get('faq', 'clientController@faq')->name('faq');
+            Route::get('faq/{id}', 'clientController@faq')->name('faq');
+            Route::get('faq/{id}/edit', 'clientController@faq')->name('faq');
+        });
         //profile
         Route::get('profile/{id}', ['as' => "$module_name.profile", 'uses' => "$controller_name@profile"]);
         Route::get('profile/{id}/edit', ['as' => "$module_name.profileEdit", 'uses' => "$controller_name@profileEdit"]);

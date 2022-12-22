@@ -12,20 +12,62 @@
                     <div class="media">
                         <div class="media-head">
                             <div class="avatar avatar-sm avatar-rounded position-relative">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                                 <span
                                     class="badge badge-success badge-indicator badge-indicator-lg position-bottom-end-overflow-1"></span>
                             </div>
                         </div>
                         <div class="media-body">
                             <div class="user-name">Aiden</div>
-                            <!-- setelah respon -->
-                            <div class="user-status">Menulis<span class="one">.</span><span class="two">.</span><span
-                                    class="three">.</span>
-                            </div>
+                            <div class="user-status">Onlien<span class="one">.</span><span class="two">.</span><span
+                                    class="three">.</span></div>
                         </div>
                     </div>
                     <div class="chat-options-wrap">
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover dropdown-toggle no-caret d-none d-xl-block"
+                            href="#" data-bs-toggle="modal" data-bs-target="#invite_people"><span class="icon"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                data-bs-original-title="Invite people"><span class="feather-icon"><i
+                                        data-feather="user-plus"></i></span></span></a>
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover d-none d-xl-block" href="#"
+                            data-bs-toggle="modal" data-bs-target="#audio_call"><span class="icon"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                data-bs-original-title="Audio call"><span class="feather-icon"><i
+                                        data-feather="phone"></i></span></span></a>
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover d-none d-xl-block" href="#"
+                            data-bs-toggle="modal" data-bs-target="#video_call"><span class="icon"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                data-bs-original-title="Video Call"><span class="feather-icon"><i
+                                        data-feather="video"></i></span></span></a>
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover chatapp-info-toggle active"
+                            href="#"><span class="icon" data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                data-bs-original-title="Info"><span class="feather-icon"><i
+                                        data-feather="info"></i></span></span></a>
+                        <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover dropdown-toggle no-caret"
+                            href="#" data-bs-toggle="dropdown"><span class="icon" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="" data-bs-original-title="More"><span
+                                    class="feather-icon"><i data-feather="more-vertical"></i></span></span></a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="d-xl-none dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#invite_people"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="user-plus"></i></span><span>Invite People</span></a>
+                            <a class="d-xl-none dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#audio_call"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="phone"></i></span><span>Audio Call</span></a>
+                            <a class="d-xl-none dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#video_call"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="video"></i></span><span>Video Call</span></a>
+                            <div class="d-xl-none dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="star"></i></span><span>Stared Messages</span></a>
+                            <a class="dropdown-item" href="#"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="archive"></i></span><span>Archive Messages</span></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="slash"></i></span><span>Block Content</span></a>
+                            <a class="dropdown-item" href="#"><span class="feather-icon dropdown-icon"><i
+                                        data-feather="external-link"></i></span><span>Feedback</span></a>
+                        </div>
                         <a class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover hk-navbar-togglable d-none d-xl-block"
                             href="#" data-bs-toggle="tooltip" data-bs-placement="top" title=""
                             data-bs-original-title="Collapse">
@@ -38,16 +80,8 @@
                 </header>
                 <div data-simplebar id="chat_body" class="chat-body">
                     <ul id="dummy_avatar" class="list-unstyled chat-single-list">
-                        <div class="row">
-                            <div class="card-body">
-                                <h5 class="card-title text-uppercase">Menu</h5>
-                                <p class="card-text">.aig = [text] AI Generator Image</p>
-                                <p class="card-text">.sticker WhatsApp Sticker = membuat gambar atau video max 10 detik convert jadi stiker Whatsapp.</p>
-                                <p class="card-text">untuk lebih lengkap nya lihat di <a href="">Panduan</a></p>
-                            </div>
-                        </div>
                         <li class="day-sep">
-                            <span>Mulai</span>
+                            <span>Today</span>
                         </li>
                         <li class="media sent">
                             <div class="media-body">
@@ -77,7 +111,7 @@
                         </li>
                         <li class="media received">
                             <div class="avatar avatar-xs avatar-rounded">
-                                <img src="{{asset ('img/Mascot-03.png') }}" alt="user" class="avatar-img">
+                                <img src="{{ asset('html/classic/dist/img/avatar8.jpg') }}" alt="user" class="avatar-img">
                             </div>
                             <div class="media-body">
                                 <div class="msg-box">
