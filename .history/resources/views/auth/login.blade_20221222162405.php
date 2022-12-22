@@ -71,7 +71,7 @@
 									<div class="row">
 										<div class="col-lg-10 mx-auto">
 											<h4 class="mb-4">Masuk ke dunia yang penuh dengan kecerdasan buatan</h4>
-											<h4 class="text-center mb-4">Sign In to AI Autobot</h4>
+											<h4 class="text-center mb-4">Sign Up to AI Autobot</h4>
                                             <a href="{{ route('social.login', 'google') }}"
                                                 class="btn btn-outline-dark btn-rounded btn-block mb-3"><span><span
                                                         class="icon"><i class="fab fa-google"></i></span><span>Sign Up
@@ -111,7 +111,7 @@
                                             <x-button class="btn btn-primary btn-uppercase btn-block">
                                                 {{ __('Log in') }}
                                             </x-button>
-											<p class="p-xs mt-2 text-center">Baru di Autobot WS ? <a href="register"><u>Membuat akun baru</u></a></p>	
+											<p class="p-xs mt-2 text-center">Baru di Autobot WS ? <a href="#"><u>Membuat akun baru</u></a></p>	
 										</div>
 									</div>
 								</form>

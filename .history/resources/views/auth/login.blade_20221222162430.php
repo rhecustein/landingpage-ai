@@ -111,7 +111,7 @@
                                             <x-button class="btn btn-primary btn-uppercase btn-block">
                                                 {{ __('Log in') }}
                                             </x-button>
-											<p class="p-xs mt-2 text-center">Baru di Autobot WS ? <a href="register"><u>Membuat akun baru</u></a></p>	
+											<p class="p-xs mt-2 text-center">Baru di Autobot WS ? <a href="#"><u>Membuat akun baru</u></a></p>	
 										</div>
 									</div>
 								</form>
