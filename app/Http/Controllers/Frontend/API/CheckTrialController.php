@@ -42,8 +42,10 @@ class CheckTrialController extends Controller
         }
 
         $checkTrial->increment('attempt');
+
         return response()->json([
-            'status' => 'go'
+            'status' => 'go',
+            'limit' => CheckTrial::LIMIT_REQUEST - $checkTrial->attempt
         ]);
     }
 }
