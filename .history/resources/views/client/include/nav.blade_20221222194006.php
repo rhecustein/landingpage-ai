@@ -7,7 +7,141 @@
                     class="icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span></button>
 
             <!-- Search -->
-           
+            <form class="dropdown navbar-search">
+                <div class="dropdown-toggle no-caret" data-bs-toggle="dropdown" data-dropdown-animation
+                    data-bs-auto-close="outside">
+                    <a href="#" class="btn btn-icon btn-rounded btn-flush-dark flush-soft-hover  d-xl-none"><span
+                            class="icon"><span class="feather-icon"><i data-feather="search"></i></span></span></a>
+                    <div class="input-group d-xl-flex d-none">
+                        <span class="input-affix-wrapper input-search affix-border">
+                            <input type="text" class="form-control  bg-transparent" data-navbar-search-close="false"
+                                placeholder="Search..." aria-label="Search">
+                            <span class="input-suffix"><span>/</span>
+                                <span class="btn-input-clear"><i class="bi bi-x-circle-fill"></i></span>
+                                <span class="spinner-border spinner-border-sm input-loader text-primary" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="dropdown-menu p-0">
+                    <!-- Mobile Search -->
+                    <div class="dropdown-item d-xl-none bg-transparent">
+                        <div class="input-group mobile-search">
+                            <span class="input-affix-wrapper input-search">
+                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+                                <span class="input-suffix">
+                                    <span class="btn-input-clear"><i class="bi bi-x-circle-fill"></i></span>
+                                    <span class="spinner-border spinner-border-sm input-loader text-primary"
+                                        role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!--/ Mobile Search -->
+                    <!-- <div data-simplebar class="dropdown-body p-2">
+                        <h6 class="dropdown-header">Recent Search
+                        </h6>
+                        <div class="dropdown-item bg-transparent">
+                            <a href="#" class="badge badge-pill badge-soft-secondary">Grunt</a>
+                            <a href="#" class="badge badge-pill badge-soft-secondary">Node JS</a>
+                            <a href="#" class="badge badge-pill badge-soft-secondary">SCSS</a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">Help
+                        </h6>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="media align-items-center">
+                                <div class="media-head me-2">
+                                    <div class="avatar avatar-icon avatar-xs avatar-soft-light avatar-rounded">
+                                        <span class="initial-wrap">
+                                            <span class="svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-corner-down-right" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M6 6v6a3 3 0 0 0 3 3h10l-4 -4m0 8l4 -4"></path>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    How to setup theme?
+                                </div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="media align-items-center">
+                                <div class="media-head me-2">
+                                    <div class="avatar avatar-icon avatar-xs avatar-soft-light avatar-rounded">
+                                        <span class="initial-wrap">
+                                            <span class="svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-corner-down-right" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                    <path d="M6 6v6a3 3 0 0 0 3 3h10l-4 -4m0 8l4 -4"></path>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    View detail documentation
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">Users
+                        </h6>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="media align-items-center">
+                                <div class="media-head me-2">
+                                    <div class="avatar avatar-xs avatar-rounded">
+                                        <img src="{{ asset('html/classic/dist/img/avatar2.jpg') }}" alt="user" class="avatar-img">
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Sarah Jone
+                                </div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="media align-items-center">
+                                <div class="media-head me-2">
+                                    <div class="avatar avatar-xs avatar-soft-primary avatar-rounded">
+                                        <span class="initial-wrap">J</span>
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Joe Jackson
+                                </div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="media align-items-center">
+                                <div class="media-head me-2">
+                                    <div class="avatar avatar-xs avatar-rounded">
+                                        <img src="{{ asset('html/classic/dist/img/avatar2.jpg') }}" alt="user" class="avatar-img">
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    Maria Richard
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+                    <div class="dropdown-footer d-xl-flex d-none"><a href="#"><u>Search all</u></a></div>
+                </div>
+            </form>
             <!-- /Search -->
         </div>
         <!-- /Start Nav -->
@@ -29,7 +163,7 @@
                                         class="icon"><span class="feather-icon"><i
                                                 data-feather="settings"></i></span></span></a>
                             </h6>
-                            <!-- <div data-simplebar class="dropdown-body  p-2">
+                            <div data-simplebar class="dropdown-body  p-2">
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <div class="media">
                                         <div class="media-head">
@@ -147,7 +281,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div> -->
+                            </div>
                             <div class="dropdown-footer"><a href="#"><u>View all notifications</u></a></div>
                         </div>
                     </div>
@@ -171,17 +305,52 @@
                                     </div>
                                     <div class="media-body">
                                         <div class="dropdown">
-                                            <a href="#" class="d-block link-dark fw-medium">{{ Auth::user()->name }}</a>
+                                            <a href="#" class="d-block dropdown-toggle link-dark fw-medium"
+                                                data-bs-toggle="dropdown" data-dropdown-animation
+                                                data-bs-auto-close="inside">Hencework</a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <div class="p-2">
+                                                    <div class="media align-items-center active-user mb-3">
+                                                        <div class="media-head me-2">
+                                                            <div class="avatar avatar-primary avatar-xs avatar-rounded">
+                                                                <span class="initial-wrap">Hk</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <a href="#"
+                                                                class="d-flex align-items-center link-dark">Hencework <i
+                                                                    class="ri-checkbox-circle-fill fs-7 text-primary ms-1"></i></a>
+                                                            <a href="#" class="d-block fs-8 link-secondary"><u>Manage
+                                                                    your account</u></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="media align-items-center mb-3">
+                                                        <div class="media-head me-2">
+                                                            <div class="avatar avatar-xs avatar-rounded">
+                                                                <img src="dist/img/avatar12.jpg" alt="user"
+                                                                    class="avatar-img">
+                                                            </div>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <a href="#" class="d-block link-dark">Jampack Team</a>
+                                                            <a href="#"
+                                                                class="d-block fs-8 link-secondary">contact@hencework.com</a>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-block btn-outline-light btn-sm">
+                                                        <span><span class="icon"><span class="feather-icon"><i
+                                                                        data-feather="plus"></i></span></span>
+                                                            <span>Add Account</span></span>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="fs-7">{{ Auth::user()->email }}</div>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" role="menuitem" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                        <div class="fs-7">contact@hencework.com</div>
+                                        <a href="#" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="profile.html">Profile</a>
                             <a class="dropdown-item" href="#"><span class="me-2">Offers</span><span
                                     class="badge badge-sm badge-soft-pink">2</span></a>
@@ -202,7 +371,7 @@
                                         data-feather="tag"></i></span><span>Raise a ticket</span></a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Terms & Conditions</a>
-                            <a class="dropdown-item" href="#">Help & Support</a> -->
+                            <a class="dropdown-item" href="#">Help & Support</a>
                         </div>
                     </div>
                 </li>

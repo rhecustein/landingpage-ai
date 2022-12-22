@@ -1,12 +1,7 @@
 @extends('client.layouts.app')
 @section('content')
     <div class="container-xxl">
-    <div class="d-flex mt-2">
-						<div class="flex-1">
-							<h1 class="pg-title">Device Manager</h1>
-							<p class="p-lg col-lg-8">Untuk menambahkan device atau nomor telepon agar dapat membuka akses pada chat bot kami, anda dapat memperbolehkan device atau nomor telepon tersebut untuk membuka akses pada chat bot tanpa batas, dengan cara memasukkan nomor telepon yang dimulai dengan angka "08".</p>
-						</div>
-					</div>
+        <h5 class="mt-4">Untuk menambahkan device atau nomor telepon agar dapat membuka akses pada chat bot kami</h5>
         <hr>
         <div class="row mt-5">
             <div class="col-md-3 col-12">

@@ -3,7 +3,7 @@
         <div class="menu-group">
             <ul class="navbar-nav flex-column">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="overview">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-template"
@@ -19,7 +19,7 @@
                             </span>
                         </span>
                         <span class="nav-link-text">Dashboard</span>
-                        <span class="badge badge-sm badge-soft-pink ms-auto">On Dev</span>
+                        <span class="badge badge-sm badge-soft-pink ms-auto">V.1</span>
                     </a>
                 </li>
             </ul>
@@ -31,7 +31,7 @@
             </div>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +153,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="tagihan">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-digit"
@@ -181,7 +181,7 @@
             </div>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="profile">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search"

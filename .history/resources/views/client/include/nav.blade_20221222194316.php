@@ -171,13 +171,10 @@
                                     </div>
                                     <div class="media-body">
                                         <div class="dropdown">
-                                            <a href="#" class="d-block link-dark fw-medium">{{ Auth::user()->name }}</a>
+                                            <a href="#" class="d-block link-dark fw-medium">Hencework</a>
                                         </div>
-                                        <div class="fs-7">{{ Auth::user()->email }}</div>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" role="menuitem" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
+                                        <div class="fs-7">contact@hencework.com</div>
+                                        <a href="#" class="d-block fs-8 link-secondary"><u>Sign Out</u></a>
                                     </div>
                                 </div>
                             </div>

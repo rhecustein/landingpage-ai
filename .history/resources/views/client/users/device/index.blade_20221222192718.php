@@ -4,7 +4,7 @@
     <div class="d-flex mt-2">
 						<div class="flex-1">
 							<h1 class="pg-title">Device Manager</h1>
-							<p class="p-lg col-lg-8">Untuk menambahkan device atau nomor telepon agar dapat membuka akses pada chat bot kami, anda dapat memperbolehkan device atau nomor telepon tersebut untuk membuka akses pada chat bot tanpa batas, dengan cara memasukkan nomor telepon yang dimulai dengan angka "08".</p>
+							<p class="p-lg col-lg-8">Untuk menambahkan device atau nomor telepon agar dapat membuka akses pada chat bot kami, Dengan demikian, dengan menambahkan device atau nomor telepon ke dalam sistem registrasi atau pendaftaran chat bot kami, kita dapat memperbolehkan device atau nomor telepon tersebut untuk membuka akses pada chat bot tanpa batas, dengan cara memasukkan nomor telepon yang dimulai dengan angka "08".</p>
 						</div>
 					</div>
         <hr>

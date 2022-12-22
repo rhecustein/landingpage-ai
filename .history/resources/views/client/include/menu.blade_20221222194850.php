@@ -181,7 +181,7 @@
             </div>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="profile">
                         <span class="nav-icon-wrap">
                             <span class="svg-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-search"
