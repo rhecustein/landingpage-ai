@@ -38,8 +38,8 @@
         is-invalid
     @enderror" multiple="multiple"
             name='tags[][name]'>
-            @foreach (old('tags', isset($device) ? $device->tags : []) as $tag)
-                <option selected="selected">{{ $tag['name'] }}</option>
+            @foreach (is_array(old('tags', isset($device) ? $device->tags : [])) ? old('tags', isset($device) ? $device->tags : []) : [] as $tag)
+                <option selected="selected">{{ $tag['name'] ?? '' }}</option>
             @endforeach
         </select>
         @error('tags')
@@ -56,6 +56,7 @@
         </div>
     </div>
 </form>
+
 
 @push('after-scripts')
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

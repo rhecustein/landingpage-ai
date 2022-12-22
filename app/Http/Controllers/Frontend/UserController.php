@@ -224,7 +224,7 @@ class UserController extends Controller
             'name' => ['required'],
             'phone' => ['required', 'unique:devices,phone'],
             'tags' => ['required', 'array'],
-            'tags.*' => ['required'],
+            'tags.*.name' => ['required'],
         ]);
         $device = Device::create($data + ['user_id' => auth()->user()->id]);
         $device->tags()->createMany($data['tags']);
@@ -238,7 +238,7 @@ class UserController extends Controller
             'name' => ['required'],
             'phone' => ['required', 'unique:devices,phone,' . $device->id],
             'tags' => ['required', 'array'],
-            'tags.*' => ['required'],
+            'tags.*.name' => ['required'],
         ]);
         $device->update($data);
         $device->tags()->delete();
