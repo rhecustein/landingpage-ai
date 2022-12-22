@@ -47,11 +47,14 @@ class RegisteredUserController extends Controller
             'password'   => Hash::make($request->password),
         ]);
 
+        // assign role
+        $user->assignRole('user');
+
+
         // username
         $username = config('app.initial_username') + $user->id;
         $user->username = $username;
         $user->save();
-
         event(new Registered($user));
         event(new UserRegistered($user));
 

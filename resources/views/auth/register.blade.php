@@ -107,15 +107,6 @@
                                                         with Gmail</span></span></a>
                                             <div class="title-sm title-wth-divider divider-center my-4"><span>Or</span>
                                             </div>
-                                            @if ($errors->any())
-                                                <div class="alert alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
                                             <div class="row gx-3">
                                                 <div class="form-group col-lg-12">
                                                     <label class="form-label">Nama</label>

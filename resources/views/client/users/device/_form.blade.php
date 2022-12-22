@@ -1,5 +1,4 @@
-<form
-    action="{{ isset($device) ? route('frontend.users.device_update', $device->id) : route('frontend.users.device_store') }}"
+<form action="{{ isset($device) ? route('user.devices.update', $device->id) : route('user.devices.store') }}"
     method="POST">
     @if (isset($device))
         @method('put')

@@ -3,7 +3,7 @@
     <div class="container-xxl">
         <div class="row mt-5">
             <div class="col-md-3 col-12">
-                <a href="{{ route('frontend.users.device_create') }}" class="btn btn-primary">
+                <a href="{{ route('user.devices.create') }}" class="btn btn-primary">
                     tambah device
                 </a>
             </div>
@@ -32,13 +32,12 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center justify-content-end">
-                                    <a href="{{ route('frontend.users.device_edit', $device->id) }}"
+                                    <a href="{{ route('user.devices.edit', $device->id) }}"
                                         class="btn btn-icon btn-rounded btn-flush-primary flush-soft-hover"
                                         data-bs-toggle="tooltip" data-bs-original-title="Edit"><span class="icon"><span
                                                 class="feather-icon"><i data-feather="edit-3"></i></span></span></a>
                                     <span>
-                                        <form action="{{ route('frontend.users.device_delete', $device->id) }}"
-                                            method="post">
+                                        <form action="{{ route('user.devices.destroy', $device->id) }}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <button onclick="return confirm('Are you sure you want to delete this item?');"
