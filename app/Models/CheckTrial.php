@@ -9,5 +9,5 @@ class CheckTrial extends Model
 {
     use HasFactory;
     protected $fillable = ['no'];
-    public const LIMIT_REQUEST = 2;
+    public const LIMIT_REQUEST = 5;
 }
