@@ -3,7 +3,7 @@
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\UserController as ClientUserController;
+use App\Http\Controllers\Frontend\UserController as ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,25 +45,25 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
         $controller_name = 'UserController';
 
         Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'client.'], function () {
-            Route::get('client', 'ClientUserController@index')->name('overview');
-            Route::get('overview', 'ClientUserController@overview')->name('overview');
-            Route::get('chatbot', 'ClientUserController@chatbot')->name('chatbot');
-            Route::get('voice', 'ClientUserController@voice')->name('voice');
-            Route::patch('usage', 'ClientUserController@usage')->name('usage');
-            Route::delete('device', 'ClientUserController@device')->name('device');
-            Route::get('tagihan', 'ClientUserController@tagihan')->name('tagihan');
-            Route::get('apikey', 'ClientUserController@apikey')->name('apikey');
-            Route::get('offers', 'ClientUserController@offers')->name('offers');
-            Route::get('referral', 'ClientUserController@referral')->name('referral');
-            Route::get('agent', 'ClientUserController@agent')->name('agent');
-            Route::get('paymentmethod', 'ClientUserController@paymentmethod')->name('paymentmethod');
-            Route::get('subscription', 'ClientUserController@subscription')->name('subscription');
-            Route::get('settings', 'ClientUserController@settings')->name('settings');
-            Route::get('raiseticket', 'ClientUserController@raiseticket')->name('raiseticket');
-            Route::get('ticket', 'ClientUserController@ticket')->name('ticket');
-            Route::get('faq', 'ClientUserController@faq')->name('faq');
-            Route::get('faq/{id}', 'ClientUserController@faq')->name('faq');
-            Route::get('faq/{id}/edit', 'ClientUserController@faq')->name('faq');
+            Route::get('client', 'UserControlle@index')->name('overview');
+            Route::get('overview', 'UserControlle@overview')->name('overview');
+            Route::get('chatbot', 'UserControlle@chatbot')->name('chatbot');
+            Route::get('client/voice', 'UserControlle@voice')->name('voice');
+            Route::patch('client/usage', 'UserControlle@usage')->name('usage');
+            Route::delete('client/device', 'UserControlle@device')->name('device');
+            Route::get('client/tagihan', 'UserControlle@tagihan')->name('tagihan');
+            Route::get('client/apikey', 'UserControlle@apikey')->name('apikey');
+            Route::get('client/offers', 'UserControlle@offers')->name('offers');
+            Route::get('client/referral', 'UserControlle@referral')->name('referral');
+            Route::get('client/agent', 'UserControlle@agent')->name('agent');
+            Route::get('client/paymentmethod', 'UserControlle@paymentmethod')->name('paymentmethod');
+            Route::get('client/subscription', 'UserControlle@subscription')->name('subscription');
+            Route::get('client/settings', 'UserControlle@settings')->name('settings');
+            Route::get('client/raiseticket', 'UserControlle@raiseticket')->name('raiseticket');
+            Route::get('client/ticket', 'UserControlle@ticket')->name('ticket');
+            Route::get('client/faq', 'UserControlle@faq')->name('faq');
+            Route::get('client/faq/{id}', 'UserControlle@faq')->name('faq');
+            Route::get('client/faq/{id}/edit', 'UserControlle@faq')->name('faq');
         });
         //profile
         Route::get('profile/{id}', ['as' => "$module_name.profile", 'uses' => "$controller_name@profile"]);

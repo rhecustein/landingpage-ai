@@ -2,8 +2,7 @@
 
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\UserController as ClientUserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,28 +42,48 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'frontend.
         */
         $module_name = 'users';
         $controller_name = 'UserController';
+        // overview
+        Route::get("overview", ['as' => "$module_name.overview", 'uses' => "$controller_name@overview"]);
 
-        Route::group(['namespace' => 'App\Http\Controllers\Frontend', 'as' => 'client.'], function () {
-            Route::get('client', 'ClientUserController@index')->name('overview');
-            Route::get('overview', 'ClientUserController@overview')->name('overview');
-            Route::get('chatbot', 'ClientUserController@chatbot')->name('chatbot');
-            Route::get('voice', 'ClientUserController@voice')->name('voice');
-            Route::patch('usage', 'ClientUserController@usage')->name('usage');
-            Route::delete('device', 'ClientUserController@device')->name('device');
-            Route::get('tagihan', 'ClientUserController@tagihan')->name('tagihan');
-            Route::get('apikey', 'ClientUserController@apikey')->name('apikey');
-            Route::get('offers', 'ClientUserController@offers')->name('offers');
-            Route::get('referral', 'ClientUserController@referral')->name('referral');
-            Route::get('agent', 'ClientUserController@agent')->name('agent');
-            Route::get('paymentmethod', 'ClientUserController@paymentmethod')->name('paymentmethod');
-            Route::get('subscription', 'ClientUserController@subscription')->name('subscription');
-            Route::get('settings', 'ClientUserController@settings')->name('settings');
-            Route::get('raiseticket', 'ClientUserController@raiseticket')->name('raiseticket');
-            Route::get('ticket', 'ClientUserController@ticket')->name('ticket');
-            Route::get('faq', 'ClientUserController@faq')->name('faq');
-            Route::get('faq/{id}', 'ClientUserController@faq')->name('faq');
-            Route::get('faq/{id}/edit', 'ClientUserController@faq')->name('faq');
-        });
+        // chatbot ai
+        Route::get("chatbot", ['as' => "$module_name.chatbot", 'uses' => "$controller_name@chatbot"])->name("$module_name.chatbot");
+
+        // voice ai
+        Route::get("voice", ['as' => "$module_name.voice", 'uses' => "$controller_name@voice"]);
+
+        //usage ai
+        Route::get("usage", ['as' => "$module_name.usage", 'uses' => "$controller_name@usage"]);
+
+        //device ai
+        Route::get("device", ['as' => "$module_name.device", 'uses' => "$controller_name@device"]);
+
+        //tagihan ai
+        Route::get("tagihan", ['as' => "$module_name.tagihan", 'uses' => "$controller_name@tagihan"]);
+
+        //api key
+        Route::get("apikey", ['as' => "$module_name.apikey", 'uses' => "$controller_name@apikey"]);
+
+        //offers
+        Route::get("offers", ['as' => "$module_name.offers", 'uses' => "$controller_name@offers"]);
+
+        //referral
+        Route::get("referral", ['as' => "$module_name.referral", 'uses' => "$controller_name@referral"]);
+
+        //agent
+        Route::get("agent", ['as' => "$module_name.agent", 'uses' => "$controller_name@agent"]);
+
+        //payment method
+        Route::get("paymentmethod", ['as' => "$module_name.paymentmethod", 'uses' => "$controller_name@paymentmethod"]);
+
+        //subscription
+        Route::get("subscription", ['as' => "$module_name.subscription", 'uses' => "$controller_name@subscription"]);
+
+        //settings
+        Route::get("settings", ['as' => "$module_name.settings", 'uses' => "$controller_name@settings"]);
+
+        //raise ticket
+        Route::get("raiseticket", ['as' => "$module_name.raiseticket", 'uses' => "$controller_name@raiseticket"]);
+
         //profile
         Route::get('profile/{id}', ['as' => "$module_name.profile", 'uses' => "$controller_name@profile"]);
         Route::get('profile/{id}/edit', ['as' => "$module_name.profileEdit", 'uses' => "$controller_name@profileEdit"]);
