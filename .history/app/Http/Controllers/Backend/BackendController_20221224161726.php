@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 
 class BackendController extends Controller
 {
@@ -14,7 +13,7 @@ class BackendController extends Controller
      */
     public function index()
     {
-        $user_count = User::count();
-        return view('backend.index', compact('user_count'));
+        $user_controller = User::count();
+        return view('backend.index');
     }
 }

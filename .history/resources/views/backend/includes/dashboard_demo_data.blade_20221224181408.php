@@ -206,7 +206,6 @@
     <!-- /.col-->
 </div>
 
-<h6>System Config</h6>
 <hr>
 <div class="row">
     <div class="col-6 col-lg-3">

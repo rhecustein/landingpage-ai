@@ -50,8 +50,8 @@
 </div>
 <!-- /.row-->
 
-<h6>Fitur</h6>
-<hr>
+
+
 <div class="row">
     <div class="col-sm-6 col-lg-3">
         <div class="card mb-4 text-white bg-primary">
@@ -206,8 +206,7 @@
     <!-- /.col-->
 </div>
 
-<h6>System Config</h6>
-<hr>
+
 <div class="row">
     <div class="col-6 col-lg-3">
         <div class="card mb-4">
