@@ -43,31 +43,59 @@
                         @endguest
                         
                         <li class="menu-item">
-                            <a href="/login">Login</a>
+                            <a href="">Harga</a>
                         </li>
-                        <!-- <li class="menu-item">
+                        <li class="menu-item">
                             <a href="">Kontak</a>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav><!-- /#main-nav -->
                 @guest
-                        <a class="tf-button btn-effect" href="https://chat.whatsapp.com/ILZdQCPO4AUGq1635YXtaD">   
+                        <a class="tf-button btn-effect" href="">   
                             <span class="boder-fade"></span>                                     
                             <span class="effect">join Whatsapp</span>
                         </a>
                 @endguest
                 @auth
-                @can('view_backend')
-                <a class="tf-button btn-effect" href="{{ route('backend.dashboard') }}">   
-                            <span class="boder-fade"></span>                                     
-                            <span class="effect">Dashboard</span>
-                </a>
-                @endif
-                <a class="tf-button btn-effect" href="{{ route('user.profile.index') }}">   
-                            <span class="boder-fade"></span>                                     
-                            <span class="effect">Dashboard</span>
-                </a>
-                @endauth
+                        <div x-show="isUserMenuOpen" @click.away="isUserMenuOpen = false"
+                            x-transition:enter="transition ease-out duration-100 transform"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75 transform"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-stone-800 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+
+                            @can('view_backend')
+                                <a href='{{ route('backend.dashboard') }}'
+                                    class="block px-4 py-2 text-sm text-gray-600 hover:bg-teal-500 hover:text-white"
+                                    role="menuitem">
+                                    <i class="fas fa-tachometer-alt fa-fw"></i>&nbsp;{{ __('Admin Dashboard') }}
+                                </a>
+                                @endif
+                                <a href="{{ route('user.profile.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-600 hover:bg-teal-500 hover:text-white"
+                                    role="menuitem">
+                                    <i class="fas fa-user fa-fw"></i>&nbsp;{{ Auth::user()->name }}
+                                </a>
+                                <a href="{{ route('user.profile.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-600 hover:bg-teal-500 hover:text-white"
+                                    role="menuitem">
+                                    <i class="fas fa-cogs fa-fw"></i>&nbsp;{{ __('Settings') }}
+                                </a>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="block px-4 py-2 text-sm text-gray-600 hover:bg-teal-500 hover:text-white"
+                                    role="menuitem">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </div>
+                        @endauth
+
                 <div class="mobile-button"><span></span></div><!-- /.mobile-button -->
             </div>
         </div>
@@ -77,9 +105,9 @@
 
     <footer id="footer">
         <div class="footer-main">
-            <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft.png') }}" alt="" class="bg1">
-            <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft2.png') }}" alt="" class="bg2">
-            <!-- <div class="container">
+            <img src="assets/images/backgroup/bg-ft.png" alt="" class="bg1">
+            <img src="assets/images/backgroup/bg-ft2.png" alt="" class="bg2">
+            <div class="container">
                 <ul class="widget-social">
                     <li>
                         <a href="#">
@@ -130,13 +158,13 @@
                     <input type="email" placeholder="Enter your email address" required="" id="subscribe-email">
                     <button class="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span class="effect">Subscribe</span></button>
                 </form>
-            </div> -->
+            </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="wrap-fx">
                     <div class="Copyright">
-                        <p>AUTOBOT 2023- ALL rights reserved</p>
+                        <p>CYBOX 2022- ALL rights reserved</p>
                     </div>
                     <ul class="list">
                         <li>
@@ -149,7 +177,7 @@
                             <a href="#">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <a href="contact.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>

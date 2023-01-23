@@ -79,7 +79,7 @@
         <div class="footer-main">
             <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft.png') }}" alt="" class="bg1">
             <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft2.png') }}" alt="" class="bg2">
-            <!-- <div class="container">
+            <div class="container">
                 <ul class="widget-social">
                     <li>
                         <a href="#">
@@ -124,19 +124,19 @@
                         </a>
                     </li>
                 </ul>
-                <h5 class="heading">don’t miss out, join now for early access</h5>
+                <!-- <h5 class="heading">don’t miss out, join now for early access</h5>
                 <p>Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut </p>
                 <form action="#" id="subscribe-form">
                     <input type="email" placeholder="Enter your email address" required="" id="subscribe-email">
                     <button class="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span class="effect">Subscribe</span></button>
-                </form>
-            </div> -->
+                </form> -->
+            </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="wrap-fx">
                     <div class="Copyright">
-                        <p>AUTOBOT 2023- ALL rights reserved</p>
+                        <p>CYBOX 2022- ALL rights reserved</p>
                     </div>
                     <ul class="list">
                         <li>
@@ -149,7 +149,7 @@
                             <a href="#">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <a href="contact.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>

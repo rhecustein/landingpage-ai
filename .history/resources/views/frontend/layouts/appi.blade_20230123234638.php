@@ -136,7 +136,7 @@
             <div class="container">
                 <div class="wrap-fx">
                     <div class="Copyright">
-                        <p>AUTOBOT 2023- ALL rights reserved</p>
+                        <p>CYBOX 2022- ALL rights reserved</p>
                     </div>
                     <ul class="list">
                         <li>
@@ -149,7 +149,7 @@
                             <a href="#">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <a href="contact.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>

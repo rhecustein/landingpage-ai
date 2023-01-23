@@ -38,16 +38,19 @@
                         <li class="menu-item">
                             <a href="/register">Register</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="/login">Login</a>
+                        </li>
                         @else
                         @endif
                         @endguest
                         
                         <li class="menu-item">
-                            <a href="/login">Login</a>
+                            <a href="">Harga</a>
                         </li>
-                        <!-- <li class="menu-item">
+                        <li class="menu-item">
                             <a href="">Kontak</a>
-                        </li> -->
+                        </li>
                     </ul>
                 </nav><!-- /#main-nav -->
                 @guest
@@ -77,9 +80,9 @@
 
     <footer id="footer">
         <div class="footer-main">
-            <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft.png') }}" alt="" class="bg1">
-            <img src="{{ asset('assets/cybox/cybox/images/backgroup/bg-ft2.png') }}" alt="" class="bg2">
-            <!-- <div class="container">
+            <img src="assets/images/backgroup/bg-ft.png" alt="" class="bg1">
+            <img src="assets/images/backgroup/bg-ft2.png" alt="" class="bg2">
+            <div class="container">
                 <ul class="widget-social">
                     <li>
                         <a href="#">
@@ -130,13 +133,13 @@
                     <input type="email" placeholder="Enter your email address" required="" id="subscribe-email">
                     <button class="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span class="effect">Subscribe</span></button>
                 </form>
-            </div> -->
+            </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="wrap-fx">
                     <div class="Copyright">
-                        <p>AUTOBOT 2023- ALL rights reserved</p>
+                        <p>CYBOX 2022- ALL rights reserved</p>
                     </div>
                     <ul class="list">
                         <li>
@@ -149,7 +152,7 @@
                             <a href="#">Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="">Contact Us</a>
+                            <a href="contact.html">Contact Us</a>
                         </li>
                     </ul>
                 </div>
